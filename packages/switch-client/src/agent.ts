@@ -4,7 +4,7 @@ import { HttpError } from "./gateway";
 
 export interface Frame {
   event: string;
-  data: Record<string, any>;
+  data: Record<string, unknown>;
   id?: number;
 }
 

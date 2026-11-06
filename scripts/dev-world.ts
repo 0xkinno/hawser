@@ -37,7 +37,13 @@ const owners = [
 const admin = new Gateway(base);
 await admin.login(adminEmail, adminPassword);
 
-const world: Record<string, any> = { base, owners: {}, agents: {}, rooms: {} };
+interface World {
+  base: string;
+  owners: Record<string, { name: string; email: string; password: string; userId: string }>;
+  agents: Record<string, { id: string; apiKey: string; owner: string }>;
+  rooms: Record<string, { id: string; name: string }>;
+}
+const world: World = { base, owners: {}, agents: {}, rooms: {} };
 for (const o of owners) {
   const email = `${o.name}@hawser.test`;
   const password = randomBytes(12).toString("base64url");
@@ -63,7 +69,7 @@ for (const o of owners) {
   }
 }
 
-const agentIds = Object.values(world.agents).map((a: any) => a.id);
+const agentIds = Object.values(world.agents).map((a) => a.id);
 const room = await admin.createRoom({
   name: "call-saltmarsh-grace-brake",
   description:
