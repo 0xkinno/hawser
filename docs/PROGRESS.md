@@ -18,6 +18,8 @@ Cloned to Downloads/hawser, installed, `pnpm run verify:all` green, 152 browser 
 
 Later the same day: GitHub CLI installed under `C:\Users\hp\tools\gh` and signed in with the codespace scope, Codespace created, commit pushed, Track 3 fork made and claims posted (see `docs/TRACK3_LOG.md`).
 
+Evening of 6 November: Slack workspace and desk channel created by the builder, Telegram bot created, SSH alias for the Codespace working, Switch Console v0.40.1 installer downloaded from the official release. Tokens stay in the gitignored `.env` or in Console only.
+
 Still needs the builder: Codespace (the `gh` CLI was not installed on this machine), Slack and Telegram, the real call, video, form.
 
 Next: `docs/HANDOFF.md` section 3.
