@@ -48,6 +48,17 @@
           }
         }
       }
+    },
+    {
+      "include": ["apps/web/**"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "noNoninteractiveTabindex": "off",
+            "useSemanticElements": "off"
+          }
+        }
+      }
     }
   ]
 }
