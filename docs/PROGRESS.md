@@ -16,6 +16,8 @@ In progress: nothing. The work stopped at the edge of what needs the builder's a
 
 Cloned to Downloads/hawser, installed, `pnpm run verify:all` green, 152 browser tests green in Chromium. Visual review found one real defect: `.desk-head` removed the side gutter, so the desk, verify, findings, judge and trace pages touched the screen edge on phones. Fixed in `apps/web/app/globals.css`, README screenshots regenerated. Added `apps/web/e2e/demo.spec.ts` and `playwright.demo.config.ts`: a paced walk-through of every action (anchors, replay, seven-step tour, themes, verify pass, tampered bundle mismatch, junk refusal, stats endpoint, 404) recorded as video at 1440x900 and 393x852 into `demo-footage/` (gitignored, for the film). Known gap: the lane chart on a phone is legible only as a shape; its labels are tiny.
 
+Later the same day: GitHub CLI installed under `C:\Users\hp\tools\gh` and signed in with the codespace scope, Codespace created, commit pushed, Track 3 fork made and claims posted (see `docs/TRACK3_LOG.md`).
+
 Still needs the builder: Codespace (the `gh` CLI was not installed on this machine), Slack and Telegram, the real call, video, form.
 
 Next: `docs/HANDOFF.md` section 3.

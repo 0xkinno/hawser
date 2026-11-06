@@ -229,6 +229,8 @@ bash scripts/start-timekeeper.sh
 
 The server and agents for the recorded demonstration ran in a GitHub Codespace and were driven from Switch Console. The development runs in this repository ran on a local server, and say so.
 
+**Browser tests and demo footage.** `cd apps/web && pnpm exec playwright test` runs 152 checks across six viewports with axe. `pnpm exec playwright test -c playwright.demo.config.ts` replays every user action (anchors, replay, seven-step tour, both themes, verify pass, tampered bundle refused, junk file refused) and records video at 1440 by 900 and 393 by 852 into `demo-footage/`, which is not committed.
+
 ## Judging criteria map
 
 | Criterion (weight) | Where to look |
@@ -241,6 +243,10 @@ The server and agents for the recorded demonstration ran in a GitHub Codespace a
 ## Disclosures
 
 AI coding assistants were used to write this repository, including Claude Code. The author is 0xkinno and can explain every part. The people, companies and vessels are fictional, and the charter terms are a fictional recap modelled on the public Brake facts. No real charter, vessel or crew data is used. No prior work was reused. Quoted court text is limited to a few facts with paragraph numbers, and the judgment page was read and cited, not scraped.
+
+## Track 3, Best Core Contribution
+
+Claim comments are posted on [#796 (SMS through Twilio)](https://github.com/sandbox-quantum/switch/issues/796) and [#792 (Signal)](https://github.com/sandbox-quantum/switch/issues/792) in `sandbox-quantum/switch`, from the fork `0xkinno/switch`. No pull request is open yet; the log is [`docs/TRACK3_LOG.md`](docs/TRACK3_LOG.md) and nothing is claimed as merged.
 
 ## Repository map
 
