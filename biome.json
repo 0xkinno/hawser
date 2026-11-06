@@ -14,7 +14,11 @@
       "apps/web/data",
       "apps/web/public/data",
       "apps/web/.next",
-      "docs/FACTS.json"
+      "docs/FACTS.json",
+      "apps/web/test-results",
+      "apps/web/playwright-report",
+      "test-results",
+      "playwright-report"
     ]
   },
   "organizeImports": {
