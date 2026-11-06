@@ -1,0 +1,25 @@
+{
+  "name": "hawser",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "vitest run",
+    "check-copy": "node scripts/check-copy.mjs",
+    "hash-competitors": "node scripts/hash-competitors.mjs",
+    "verify:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm check-copy"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

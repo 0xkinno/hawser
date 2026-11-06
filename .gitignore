@@ -1,0 +1,14 @@
+reference/
+.env
+.env.*
+!.env.example
+.data/
+node_modules/
+dist/
+.next/
+coverage/
+playwright-report/
+test-results/
+probes/results/*.local.json
+*.log
+.DS_Store

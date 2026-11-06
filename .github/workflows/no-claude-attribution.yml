@@ -1,0 +1,50 @@
+name: Block Claude attribution
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  no-claude-attribution:
+    name: no-claude-attribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject Claude authors and trailers
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess, sys
+          ev = os.environ["EVENT"]
+          if ev == "pull_request":
+              rng = f'{os.environ["PR_BASE"]}..{os.environ["PR_HEAD"]}'
+          else:
+              before = os.environ.get("PUSH_BEFORE", "")
+              after = os.environ["PUSH_AFTER"]
+              rng = after if (not before or set(before) == {"0"}) else f"{before}..{after}"
+          commits = subprocess.check_output(["git", "rev-list", rng], text=True).split()
+          bad_id = re.compile(r"claude|anthropic", re.I)
+          bad_msg = re.compile(r"(?im)^\s*(co-authored-by:.*(claude|anthropic)|claude-session:|.*generated with.*claude)")
+          failed = False
+          for sha in commits:
+              raw = subprocess.check_output(["git", "show", "-s", "--format=%an%n%ae%n%cn%n%ce%n%B", sha], text=True, errors="replace")
+              parts = raw.split("\n", 4)
+              if len(parts) < 5:
+                  continue
+              ident = " ".join(parts[:4])
+              if bad_id.search(ident) or bad_msg.search(parts[4]):
+                  print(f"FAIL: {sha} carries Claude or Anthropic identity or attribution.")
+                  failed = True
+          if failed:
+              print("Remove the attribution and push corrected commits.")
+              sys.exit(1)
+          print(f"PASS: {len(commits)} commits checked, no Claude attribution.")
+          PY
