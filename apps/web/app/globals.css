@@ -497,7 +497,7 @@ table.t td {
 }
 
 .desk-head {
-  padding: 110px 0 24px;
+  padding: 110px var(--gutter) 24px;
 }
 .lane-chart {
   width: 100%;

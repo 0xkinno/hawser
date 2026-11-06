@@ -4,6 +4,7 @@
     "ignore": [
       ".data",
       "reference",
+      "demo-footage",
       "node_modules",
       "dist",
       ".next",

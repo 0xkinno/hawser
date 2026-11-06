@@ -14,6 +14,7 @@ const viewports = [
 
 export default defineConfig({
   testDir: "./e2e",
+  testIgnore: /demo\.spec\.ts/,
   timeout: 60_000,
   retries: 0,
   reporter: [["list"]],

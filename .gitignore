@@ -12,3 +12,4 @@ test-results/
 probes/results/*.local.json
 *.log
 .DS_Store
+demo-footage/
