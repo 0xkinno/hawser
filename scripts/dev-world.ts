@@ -123,7 +123,7 @@ const callConfig = {
     charterRef: "C/P demo 2026",
     fictional: true,
   },
-  verifyUrl: process.env.HAWSER_VERIFY_URL ?? "https://hawser.vercel.app/verify",
+  verifyUrl: process.env.HAWSER_VERIFY_URL ?? "https://hawser-kinnoskis-projects.vercel.app/verify",
   signerNames: {
     master: "Captain Rui Antunes (fictional)",
     agent: "Jonas Weber (fictional)",

@@ -1,26 +1,24 @@
 # Progress
 
-## Session 1, 2026-11-06
+## Session 1, 6 November 2026
 
-Done
-- Repository skeleton: workspace, lint, typecheck, tests, copy check, CI workflow, attribution gate and commit hook (hook tested locally).
-- Devcontainer for the Codespace runtime host.
-- Docs: RULES_EXTRACT, MOMENT (sources opened and checked), THESIS, SPONSOR_INTEL (rows to verify).
+Done: everything marked `[x]` in `docs/TASK.md`. In numbers (from `docs/FACTS.json`): 15 of 16 published laytime examples reproduced; 10 of 10 runnable break cases held on a real switch-core; silent rewrite detected in a median 2.2 s; crashed clock replaced in a median 21.9 s with an identical digest; reconciler 0 false and 0 missed divergences with 271 abstentions on 16,498 generated events. 127 unit tests, 152 browser tests across six viewports.
 
-Corrections found while checking sources
-- The Brake judgment's US$844,131.25 award is a two-port total. The US$4,114.06 that survived is the load port. The hook wording is corrected in THESIS.md and MOMENT.md.
-- The Teras source page could not be opened by script (HTTP 403). It stays unverified until opened by hand.
+Defects found by our own tests and fixed: signer remarks were part of the digest and voided other signatures; a version was issued before all three logs existed; zero allowed laytime never started demurrage; two Timekeepers could both believe they held the role; the reconciler guessed an ambiguous local time and produced 77 false divergences; four accessibility faults on the site.
 
-Session 1, later
-- Switch repo cloned; facts in SPONSOR_INTEL checked against source.
-- Phase 3 done: laytime engine, reconciler, digest, 70 tests, 16 external worked examples (15 of 16 reproduce; the one mismatch is an unless-used clause the engine does not model).
-- Engine bug found by a test and fixed: zero allowed laytime never started the demurrage clock.
+Corrections to the brief, kept: the Brake award figure and reason, the update notice, the WebSocket ping interval, the crash failover time, the restart behaviour.
 
-In progress
-- Track 3 shortlist: the issue list is not readable from this session (GitHub API not attached for the Switch repo). Needs the list from Kinnoski.
+In progress: nothing. The work stopped at the edge of what needs the builder's accounts.
 
-Next
-- Show the Track 3 shortlist and drafted comments for approval.
-- Addendum B.3 and B.4 scripts, then Phase 3 laytime engine.
+Next: `docs/HANDOFF.md` section 3.
 
-Self-judging scores against rivals A to E will be added once there is a running system to score.
+## Self-judging against five generic rivals A to E (1 to 5, honest, to be revisited after the real call)
+
+| Criterion | HAWSER | Reasoning |
+|---|---|---|
+| Use of Switch | 4 | Ownership, addressing, author-locked documents, the exclusive role lease and the raw WebSocket are central and observed. Held back from 5 by the missing Slack and Telegram run and the unrun templates |
+| Technical execution | 4 | Reproducible with `pnpm verify`, CI, and a real server run. Held back by the evidence being from a local server and simulated people |
+| Creativity and impact | 4 | An empty lane, a real court case, a document the industry already signs. A practitioner has not yet commented |
+| Presentation | 3 | The site and README are strong. The video does not exist yet and the real chat screenshots are missing |
+
+Blocking questions: Is Switch central, and would HAWSER stop without it? Yes. Does a judge see a real chat with real people in the video? Not yet. Can a stranger run `pnpm verify` with no keys? Yes. Is every Switch claim backed by a probe or file and line? Yes, or marked not run. Is the person and the moment clear in 10 seconds? Yes on the landing page. Does the master do something software cannot (photo, signature)? Designed, not yet recorded. Are misses published? Yes. Is the landing page clean at six viewports? Yes.

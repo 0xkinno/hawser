@@ -12,7 +12,7 @@ This is not a made-up risk. In April 2026 the English High Court removed about U
 
 | | |
 |---|---|
-| Live | https://hawser.vercel.app (no login) |
+| Live | https://hawser-kinnoskis-projects.vercel.app (no login; a custom domain can replace it) |
 | For judges | `/judge`, a 60 second walk |
 | Demo video | to be linked at submission, under 3 minutes |
 | Track | Track 01, Best Business Workflow. Also entered for Track 03, Best Core Contribution |
@@ -55,10 +55,10 @@ What each person physically does: the master photographs the deck log page and s
 
 ## Explore in 2 minutes
 
-1. Open [the port call](https://hawser.vercel.app/call/call-saltmarsh-grace-brake-simulated-2026-11-06): three logs on one time axis, one priced difference, "noted" recorded as not accepted, three signatures on one digest, the PDF.
+1. Open [the port call](https://hawser-kinnoskis-projects.vercel.app/call/call-saltmarsh-grace-brake-simulated-2026-11-06): three logs on one time axis, one priced difference, "noted" recorded as not accepted, three signatures on one digest, the PDF.
 2. Press **Replay the call**, or **Guided tour**.
-3. Open [Findings](https://hawser.vercel.app/findings): every probe and break case with its date and the server it ran on.
-4. Open [Verify](https://hawser.vercel.app/verify): recompute the digest and the laytime figure in your own browser.
+3. Open [Findings](https://hawser-kinnoskis-projects.vercel.app/findings): every probe and break case with its date and the server it ran on.
+4. Open [Verify](https://hawser-kinnoskis-projects.vercel.app/verify): recompute the digest and the laytime figure in your own browser.
 
 ## How Switch is used
 
