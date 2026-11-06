@@ -45,7 +45,7 @@ Mark `[x]` only when done and verified. Updated at the end of session one, 6 Nov
 
 ## Phase 8. Landing page and design pass
 - [x] DESIGN.md, SVG set, landing, glow cards, hawser line, guided tour, both themes, six viewports, axe, zero console errors
-- [ ] Hero photograph (optional, the SVG ship stands in)
+- [x] Hero photograph in place, compressed, with a phone layout and a social card
 
 ## Phase 9. Hosted mode
 - [x] Dropped per the addendum: the Codespace is the hosted mode. Optional live read-only view not built

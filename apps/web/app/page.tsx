@@ -21,9 +21,18 @@ export default function Landing() {
   return (
     <>
       <section className="hero" aria-labelledby="h">
-        <div className="art" aria-hidden="true">
-          <ShipSilhouette width="100%" height="100%" style={{ color: "var(--ink)", opacity: 0.8 }} />
-          <HawserLine width="100%" style={{ position: "absolute", left: 0, bottom: "8%" }} />
+        <div className="art">
+          <img
+            src="/hero-1000.webp"
+            srcSet="/hero-640.webp 640w, /hero-1000.webp 1000w, /hero.webp 1672w"
+            sizes="(max-width: 820px) 100vw, 70vw"
+            width={1672}
+            height={941}
+            alt="A bulk carrier at anchor in an estuary at sunset, seen from the ship's own bridge wing, with a brass ship's clock, a deck log book and a coil of mooring rope on the chart table in the foreground. Generated image."
+            fetchPriority="high"
+            decoding="async"
+          />
+          <HawserLine className="hawser" width="100%" aria-hidden="true" />
         </div>
         <div className="wrap">
           <div className="copy">

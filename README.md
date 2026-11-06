@@ -27,7 +27,7 @@ This is not a made-up risk. In April 2026 the English High Court removed about U
 <img src="docs/screens/judge-desktop-1440.png" alt="The judge path" width="49%">
 </p>
 
-The desk room in Slack, the bridge room in Telegram and the signed PDF will replace the two lower images after the recorded call with people. Until then everything shown is a recorded run on a real Switch server, and the people in it are labelled as simulated.
+The desk room in Slack, the bridge room in Telegram and the signed PDF will replace the two lower images after the recorded call with people. Until then everything shown is a recorded run on a real Switch server, and the people in it are labelled as simulated. The hero photograph was generated for this project.
 
 ## The problem
 
@@ -205,7 +205,7 @@ Short version: authorship, ownership and addressing made a three-company room po
 
 ## Run it
 
-Prerequisites: Node 22, pnpm 10, and for the live path a Switch server.
+Prerequisites: Node 22, pnpm 10, and for the live path a Switch server. Docker is not needed on your own machine for the Codespace path (the Codespace has it); it is needed only to run the Switch server on your machine with `just up`.
 
 ```bash
 git clone https://github.com/0xkinno/hawser && cd hawser

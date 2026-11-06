@@ -38,6 +38,10 @@ Brass hairlines, small tracked uppercase labels (`PORT CALL 014`), oldstyle nume
 
 One signature motion: the hawser line draws itself from the ship to the bollard when the hero loads (stroke-dashoffset, 1.6 s), then rests. Everywhere else, motion only explains state: cards slide in, a divergence pulses once, signatures stamp in. `prefers-reduced-motion` turns every one of these off.
 
+## Hero
+
+A generated photograph (bulk carrier at anchor at sunset, seen from the bridge wing, with a brass ship's clock, a deck log and a coil of rope in the foreground): `apps/web/public/hero.webp` (92 KB), with `hero-1000.webp` (45 KB) and `hero-640.webp` (23 KB) served through `srcset`, and `og.jpg` (1200 by 630) for link previews. On wide screens it fills the right three quarters of the first screen and fades into the paper on the left and at the bottom with a CSS mask, so no text sits on busy pixels. On narrow screens it becomes a banner above the headline. The hawser line draws itself across the lower right of the image. No people, no real company, no real ship name.
+
 ## Cards
 
 Every graphics card has a radar glow that follows the cursor (`--mx`, `--my`, 0.18 opacity, 280 px) plus a 1 px brass border that brightens. Disabled on touch and under reduced motion.

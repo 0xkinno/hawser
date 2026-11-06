@@ -8,6 +8,8 @@ Defects found by our own tests and fixed: signer remarks were part of the digest
 
 Corrections to the brief, kept: the Brake award figure and reason, the update notice, the WebSocket ping interval, the crash failover time, the restart behaviour.
 
+Later in session one: the hero photograph was placed (with phone layout and link preview image), the builder approved the Vercel deployment, and Codespaces access from the cloud session was tested and found blocked (HTTP 403, see `docs/HANDOFF.md`).
+
 In progress: nothing. The work stopped at the edge of what needs the builder's accounts.
 
 Next: `docs/HANDOFF.md` section 3.

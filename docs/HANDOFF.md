@@ -39,7 +39,7 @@ Not done, in the order that matters:
 4. Codespace server runs of the probes and the campaign (results so far are from the local dev server).
 5. Demo video, blog post, #HowISwitch post, form submission.
 6. Track 3 pull requests: none opened.
-7. A hero image (optional), screenshots of Slack, Telegram and the signed PDF for the README.
+7. Screenshots of Slack, Telegram and the signed PDF for the README. The hero image is done.
 8. The judge-agent red team rounds on the deployed URL.
 
 ## 2. Repository map and commands
@@ -74,6 +74,15 @@ cd apps/web && pnpm exec playwright test --trace off                       # six
 ```
 
 The Biome formatter must not touch `apps/web/data`, `runs` or `probes/results` (already ignored). After you add a result file run `pnpm facts` then `pnpm --filter @hawser/web sync`, or CI fails the staleness checks.
+
+## 2a. Questions the builder asked, answered
+
+- **Does the laptop need Docker?** No, not for the primary path. The server and agents run in the Codespace, whose devcontainer already includes Docker, and the laptop runs Switch Console only. Docker on the laptop is needed only if the builder chooses to run the Switch server on the laptop itself (`just up`), or to run Switch's own test suite for Track 3 locally. Console's "Run a server on this computer" option needs no Docker either.
+- **Telegram:** the bot token from @BotFather is entered in Switch Console (the bridge settings of the server), not in this repository and not in chat. No agent needs the token except Switch itself. Steps: in Telegram open @BotFather, send `/newbot`, pick a name and a username ending in `bot`, copy the token; send `/mybots`, choose the bot, Bot Settings, Group Privacy, Turn off (do this before adding the bot to the group); create a Telegram group for the ship's bridge room and add the bot; then in Console connect Telegram on the server and paste the token there, following `reference/switch/docs/official/deploy/messaging-apps/telegram.md`. A screenshot of the group is useful for the README and the video, but never a screenshot that shows the token.
+- **Slack:** a free workspace and a Slack app created from Switch's manifest or by hand, with a bot token (`xoxb-`) and an app token (`xapp-`), entered in Console too, per `slack.md` in the same folder. Then invite the bot to the desk channel.
+- **Claude Code and OpenCode:** no API key goes in `.env.example` or anywhere in the repository. Claude Code uses the builder's own login: run `ssh <codespace alias>`, then `claude`, and follow the login link once. OpenCode's free model needs no key. Console starts both on the Codespace; the only things to provide are those two sign-ins and the working directory (the templates use `{$agents_dir}`, which already exists on the host).
+- **Secrets rule:** `.env.example` is committed to a repository that becomes public. It lists names only. Real values live in `.env` (gitignored) on the Codespace, in Console, and in GitHub or Vercel secret stores.
+- **Codespaces from the cloud session:** tested at the end of session one after the builder approved the GitHub App's updated permissions. `gh api repos/0xkinno/hawser/codespaces` and the machines endpoint both answered `Resource not accessible by integration` (HTTP 403), and `gh codespace list` was blocked by the session proxy. So the Codespace has to be created from the builder's machine (`gh codespace create --repo 0xkinno/hawser --machine basicLinux32gb`), where the agent with `gh` and the `codespace` scope can then drive it with `gh codespace ssh -c <name> -- '<command>'`.
 
 ## 3. The plan for the remaining hours
 
