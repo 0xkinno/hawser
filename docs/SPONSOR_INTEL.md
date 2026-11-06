@@ -1,6 +1,6 @@
 # Sponsor intelligence: Switch
 
-Status: written from the build brief. Every row in section 2 is marked `to verify` until it has been checked against a clone of the Switch repository (session access to that repository is pending). Nothing marked `to verify` may be claimed in the README. Verified rows get a file and line reference and a date.
+Status: written from the build brief, then checked against a clone of the Switch repository at commit 9e158a7 (6 November 2026). Rows marked `verified in source` carry a file and line reference. Rows still marked `to verify` may not be claimed in the README until checked, and nothing here counts as observed behaviour: observed behaviour lives only in docs/FINDINGS.md after the probes run.
 
 ## 1. Founders' thesis (Switch README, quoted)
 
@@ -16,17 +16,17 @@ HAWSER takes that thesis one step further than the documented examples: one room
 
 | Primitive | Claim in the brief | Where to confirm | Status |
 |---|---|---|---|
-| Ownership | An agent inherits exactly its owner's permissions. | docs/official/internals/identity-and-access.md | to verify |
-| Addressing policy | Rules over rooms, groups, users, agents; once any rule exists, everything not admitted is denied; a new agent starts owner-only; set by the owner from the Gateway. | same; docs/TEMPLATES.md | to verify |
+| Ownership | An agent inherits exactly its owner's permissions. | docs/official/internals/identity-and-access.md line 92 | verified in source |
+| Addressing policy | Rules over rooms, groups, users, agents; once any rule exists, everything not admitted is denied; a new agent starts owner-only; set by the owner from the Gateway. | identity-and-access.md lines 119 and 120 | verified in source |
 | Visible refusal | A non-admitted sender gets one reply saying the agent cannot act; targeted sends return per-target `not_permitted`. | identity-and-access | to verify |
-| Identity claims | A claim links a platform account to a Switch user; an unclaimed account matches nobody. | identity-and-access | to verify |
-| Room documents | An agent can change or delete only a document it created; server check raises `PermissionError`; 1 MiB maximum; no revision history, `update_room_document` overwrites in place. | core/switch_core/bridges/resource/service.py; operations/definitions.py | to verify |
+| Identity claims | A claim links a platform account to a Switch user; an unclaimed account matches nobody. | identity-and-access.md lines 130 and 134 | verified in source |
+| Room documents | An agent can change or delete only a document it created; server check raises `PermissionError`; 1 MiB maximum; no revision history, `update_room_document` overwrites in place. | service.py lines 1135 to 1176 (author check at 1152, in-place `update_fields`, no history table touched); definitions.py line 584 (1 MiB) | verified in source |
 | Template `docs:` | Documents created in the room by the deployer, so no agent can edit them. | docs/TEMPLATES.md | to verify |
-| Roles and leases | Exclusive role, one holder; lease keyed to the agent, heartbeat based, released a few seconds after the session stops. | hand-off-work.md; rooms-and-resources.md | to verify |
+| Roles and leases | Exclusive role, one holder; lease keyed to the agent, heartbeat based, released a few seconds after the session stops. | hand-off-work.md lines 24 and 25 (lease semantics beyond this line still to verify) | verified in source |
 | Linked rooms | Directed links with a label; context stops at the room. | rooms-and-resources; shared-context | to verify |
 | One room, one channel | A room maps to one channel on the far side; Telegram adopts an existing group and connects outwards. | collaboration-bridge.md; deploy/messaging-apps/telegram.md | to verify |
 | Message bus | PostgreSQL messages table, per-room advisory lock assigns `seq`. | CLAUDE.md architecture | to verify |
-| Agent connection | Live transport is the WebSocket at `/agents/{id}/connection/ws`; SSE plus beat is a compatibility path; revision 9 adds `start_at`; refusal arrives as a `refused` frame. | bridges/agent/api/handlers.py | to verify |
+| Agent connection | Live transport is the WebSocket at `/agents/{id}/connection/ws`; SSE plus beat is a compatibility path; revision 9 adds `start_at`; refusal arrives as a `refused` frame. | bridges/agent/api/handlers.py lines 750 to 1114 (WebSocket route, `start_at`, `expected_generation`); ping per heartbeat interval around line 1245 | verified in source |
 | Operations | `GET /agents/{id}/ops`; `POST /agents/{id}/ops/{name}` with `X-Switch-Connection-Id`. | agent-protocol.md; operations/definitions.py | to verify |
 | Media and history | Media POST and GET under `/agents/{id}/rooms/{room_id}/media`; history under `.../history`. | handlers.py | to verify |
 | Templates v2 | `resources:` of type agent, room, group; `join:`; `links:`; rooms carry `roles:`, `docs:`, `aliases:`, `users:`. | docs/TEMPLATES.md | to verify |
