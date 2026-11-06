@@ -1,0 +1,55 @@
+{
+  "id": "handybulk-ex3-discharging",
+  "modelled": true,
+  "source": {
+    "title": "Laytime Calculation Examples: Demurrage, Despatch, NOR, and Charter Party Time Counting",
+    "publisher": "HandyBulk",
+    "url": "https://www.handybulk.com/laytime-calculation-examples-demurrage-despatch-nor-and-charter-party-time-counting/",
+    "accessed": "2026-11-06",
+    "location": "Example 3, discharging calculation"
+  },
+  "yearNote": "No year in the source. 2025 chosen. Terms count running hours, so the weekday does not matter.",
+  "publishedAnswer": "$500 despatch",
+  "terms": {
+    "portZone": "UTC",
+    "working": "SHINC",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "despatchCentsPerDay": 400000,
+    "callId": "hb-3-discharging",
+    "laytimeAllowedMin": 2880,
+    "demurrageCentsPerDay": 800000,
+    "commencement": {
+      "kind": "hours_after_nor",
+      "hours": 0
+    }
+  },
+  "nor": "NONE",
+  "events": [
+    {
+      "kind": "ARRIVED",
+      "utc": "2025-06-08T15:00:00Z"
+    },
+    {
+      "kind": "NOR_TENDERED",
+      "utc": "2025-06-08T15:00:00Z"
+    },
+    {
+      "kind": "COMPLETED",
+      "utc": "2025-06-10T12:00:00Z"
+    }
+  ],
+  "expected": {
+    "demurrageCents": 0,
+    "despatchCents": 50000
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "xshipx-ex2-shex-wwd",
+  "modelled": true,
+  "source": {
+    "title": "Timesheets and Laytime calculation",
+    "publisher": "xSHIPx",
+    "url": "https://xshipx.com/?p=4874",
+    "accessed": "2026-11-06",
+    "location": "Example 2, SHEX and weather working days"
+  },
+  "yearNote": "No year in the source. 2018 chosen because 22 November 2018 is the Thursday the source states.",
+  "publishedAnswer": "Demurrage 6h 45m at USD 1,800 per day = USD 506.25",
+  "terms": {
+    "portZone": "UTC",
+    "working": "SHEX",
+    "holidays": ["2018-11-26"],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "despatchCentsPerDay": 0,
+    "callId": "xshipx-ex2",
+    "laytimeAllowedMin": 4950,
+    "demurrageCentsPerDay": 180000,
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    }
+  },
+  "nor": "NONE",
+  "events": [
+    {
+      "kind": "ARRIVED",
+      "utc": "2018-11-22T14:00:00Z"
+    },
+    {
+      "kind": "NOR_TENDERED",
+      "utc": "2018-11-22T14:00:00Z"
+    },
+    {
+      "kind": "STOPPAGE_START",
+      "utc": "2018-11-24T08:00:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "STOPPAGE_END",
+      "utc": "2018-11-24T10:30:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "STOPPAGE_START",
+      "utc": "2018-11-28T16:30:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "STOPPAGE_END",
+      "utc": "2018-11-28T23:15:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "COMPLETED",
+      "utc": "2018-11-29T10:30:00Z"
+    }
+  ],
+  "expected": {
+    "demurrageMin": 405,
+    "demurrageCents": 50625,
+    "despatchCents": 0
+  }
+}

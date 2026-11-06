@@ -6,7 +6,7 @@ Mark `[x]` only when done and verified.
 - [x] Create public repo `0xkinno/hawser`; set local `git config user.name "0xkinno"` and `user.email` to the address Kinnoski gives (or his GitHub noreply address)
 - [x] Add `.gitignore` with `reference/`, `.env*` (except `.env.example`), `.data/`, `node_modules/`, `probes/results/*.local.json`
 - [x] Add `.claude/settings.json`, `.githooks/commit-msg`, `.github/workflows/no-claude-attribution.yml` (Part 20); run `git config core.hooksPath .githooks`
-- [ ] Clone references into `reference/` (Part 24); copy V5 into `reference/` (blocked: Switch repo access and V5 file pending)
+- [x] Switch cloned into `reference/switch` (commit 9e158a7). Competitor clones skipped on purpose (study only, never needed to build). V5 file not supplied: the build instruction was used as the full specification.
 - [x] Write `docs/RULES_EXTRACT.md`, `reference/LANE_MAP.md`, `docs/SPONSOR_INTEL.md` (rows marked to verify), `docs/MOMENT.md`, `docs/THESIS.md`
 - [x] pnpm workspace skeleton, CI with lint, typecheck, test, check-copy
 - Exit: CI green on an empty skeleton; first commit authored by 0xkinno with no trailer
@@ -25,9 +25,9 @@ Mark `[x]` only when done and verified.
 - Exit: FINDINGS.md has an observed result for every question, including surprises
 
 ### Phase 3. Laytime engine
-- [ ] Types, calendar, NOR validity, commencement, engine, money, two-scenario helper
-- [ ] Unit tests including the USD 1,996.53 assertion and the S1 Brake scenario
-- [ ] External worked examples (at least 8) with sources; publish n of m and mismatches; `NOT_MODELLED.md`
+- [x] Types, calendar, NOR validity, commencement, engine, money, two-scenario helper
+- [x] Unit tests including the USD 1,996.53 assertion and the S1 Brake scenario
+- [x] External worked examples: 16 transcribed (12 Handybulk, 2 Voyager, 2 xshipx), 15 of 16 reproduce, 1 recorded mismatch with reason; `NOT_MODELLED.md`
 - Exit: engine tests green; external results recorded
 
 ### Phase 4. Timekeeper service (the action path)
@@ -81,7 +81,7 @@ Mark `[x]` only when done and verified.
 
 ### Addendum B.1 and B.2 (runtime)
 - [x] `.devcontainer/devcontainer.json` and `.devcontainer/post-create.sh` committed; npm package names `opencode-ai` and `@anthropic-ai/claude-code` confirmed against the npm registry on 2026-11-06
-- [ ] `docs/RUN_REMOTE_HOST.md` (B.3), `scripts/*timekeeper*.sh` and `probes/run-all.sh` (B.4): not started
+- [x] `docs/RUN_REMOTE_HOST.md` (B.3, checked against the Switch docs at 9e158a7), `scripts/start-timekeeper.sh`, `stop-timekeeper.sh`, `kill-timekeeper-a.sh`, `probes/run-all.sh` (B.4). The timekeeper app they start does not exist yet.
 
 ### Addendum D.2 (Track 3)
 - [ ] Shortlist in `reference/TRACK3_SHORTLIST.md` with drafted claim comments: blocked on read access to the Switch repository

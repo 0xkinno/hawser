@@ -1,0 +1,67 @@
+{
+  "id": "voyager-port-hedland-loading",
+  "modelled": true,
+  "source": {
+    "title": "The Basics of Bulk Shipping Demurrage: How it Works, How to Calculate, and How to Manage",
+    "publisher": "Voyager Portal",
+    "url": "https://www.voyagerportal.com/the-basics-of-demurrage-a-guide-for-commodity-traders/",
+    "accessed": "2026-11-06",
+    "location": "Laytime Calculation Example, Port Hedland (loading)"
+  },
+  "yearNote": "No year in the source. 2025 chosen because 28 April 2025 is the Monday the source states.",
+  "publishedAnswer": "80.0 hours used, 8.0 hours weather excluded, no demurrage (non-reversible)",
+  "terms": {
+    "portZone": "UTC",
+    "working": "SHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "despatchCentsPerDay": 0,
+    "callId": "voyager-hedland",
+    "laytimeAllowedMin": 5760,
+    "demurrageCentsPerDay": 2200000,
+    "commencement": {
+      "kind": "hours_after_nor",
+      "hours": 6
+    }
+  },
+  "nor": "NONE",
+  "events": [
+    {
+      "kind": "ARRIVED",
+      "utc": "2025-04-28T08:00:00Z"
+    },
+    {
+      "kind": "NOR_TENDERED",
+      "utc": "2025-04-28T08:00:00Z"
+    },
+    {
+      "kind": "STOPPAGE_START",
+      "utc": "2025-04-29T18:00:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "STOPPAGE_END",
+      "utc": "2025-04-30T02:00:00Z",
+      "reason": "weather"
+    },
+    {
+      "kind": "COMPLETED",
+      "utc": "2025-05-02T06:00:00Z"
+    }
+  ],
+  "expected": {
+    "usedMin": 4800,
+    "demurrageMin": 0,
+    "demurrageCents": 0,
+    "despatchCents": 0
+  }
+}

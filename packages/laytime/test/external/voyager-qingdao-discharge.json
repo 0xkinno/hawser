@@ -1,0 +1,58 @@
+{
+  "id": "voyager-qingdao-discharge",
+  "modelled": true,
+  "source": {
+    "title": "The Basics of Bulk Shipping Demurrage: How it Works, How to Calculate, and How to Manage",
+    "publisher": "Voyager Portal",
+    "url": "https://www.voyagerportal.com/the-basics-of-demurrage-a-guide-for-commodity-traders/",
+    "accessed": "2026-11-06",
+    "location": "Laytime Calculation Example, Qingdao (discharge)"
+  },
+  "yearNote": "No year in the source. 2025 chosen because 15 May 2025 is the Thursday the source states.",
+  "publishedAnswer": "98.0 hours used, 86.4 allowed, 11.6 hours on demurrage, USD 10,633 (rounded to the dollar by the source)",
+  "terms": {
+    "portZone": "UTC",
+    "working": "SHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "despatchCentsPerDay": 0,
+    "callId": "voyager-qingdao",
+    "laytimeAllowedMin": 5184,
+    "demurrageCentsPerDay": 2200000,
+    "commencement": {
+      "kind": "hours_after_nor",
+      "hours": 6
+    }
+  },
+  "nor": "NONE",
+  "events": [
+    {
+      "kind": "ARRIVED",
+      "utc": "2025-05-15T06:00:00Z"
+    },
+    {
+      "kind": "NOR_TENDERED",
+      "utc": "2025-05-15T06:00:00Z"
+    },
+    {
+      "kind": "COMPLETED",
+      "utc": "2025-05-20T14:00:00Z"
+    }
+  ],
+  "expected": {
+    "usedMin": 5184,
+    "demurrageMin": 696,
+    "demurrageCents": 1063333,
+    "despatchCents": 0
+  },
+  "note": "The source rounds USD 10,633.33 to USD 10,633. The engine reports cents."
+}

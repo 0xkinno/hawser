@@ -1,0 +1,56 @@
+{
+  "id": "xshipx-ex1-shex-unless-used",
+  "modelled": false,
+  "source": {
+    "title": "Timesheets and Laytime calculation",
+    "publisher": "xSHIPx",
+    "url": "https://xshipx.com/?p=4874",
+    "accessed": "2026-11-06",
+    "location": "Example 1, SHEX unless used"
+  },
+  "yearNote": "No year in the source. 2018 chosen because 22 November 2018 is the Thursday the source states.",
+  "publishedAnswer": "Demurrage 1d 9h 34m at USD 1,800 per day = USD 2,512.50",
+  "terms": {
+    "portZone": "UTC",
+    "working": "SHEX",
+    "holidays": ["2018-11-26"],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "despatchCentsPerDay": 0,
+    "callId": "xshipx-ex1",
+    "laytimeAllowedMin": 4950,
+    "demurrageCentsPerDay": 180000,
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    }
+  },
+  "nor": "NONE",
+  "events": [
+    {
+      "kind": "ARRIVED",
+      "utc": "2018-11-22T14:00:00Z"
+    },
+    {
+      "kind": "NOR_TENDERED",
+      "utc": "2018-11-22T14:00:00Z"
+    },
+    {
+      "kind": "COMPLETED",
+      "utc": "2018-11-29T10:30:00Z"
+    }
+  ],
+  "expected": {
+    "demurrageCents": 251250,
+    "despatchCents": 0
+  },
+  "mismatchReason": "The charter says SHEX unless used and the source does not list which Sunday and holiday periods were worked, so the engine, which does not model unless used, cannot reproduce it. The source is also internally inconsistent: 1d 9h 34m at USD 1,800 per day is USD 2,517.50, not USD 2,512.50."
+}
