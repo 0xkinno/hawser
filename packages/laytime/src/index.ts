@@ -7,3 +7,4 @@ export * from "./nor";
 export * from "./reconcile";
 export * from "./sha256";
 export * from "./types";
+export * from "./verify";

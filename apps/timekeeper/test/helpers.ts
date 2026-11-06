@@ -87,6 +87,7 @@ export function agreedCall() {
   const out: Action[] = [];
   out.push(...c.ingestDoc("vessel", doc("vessel", AGREED)));
   out.push(...c.ingestDoc("agency", doc("agency", AGREED)));
+  out.push(...c.ingestDoc("charterer", doc("charterer", [])));
   out.push(...c.onMessage(msg(IDS.master, "@timekeeper enrol master")));
   out.push(...c.onMessage(msg(IDS.jonas, "@timekeeper enrol agent")));
   out.push(...c.onMessage(msg(IDS.priya, "@timekeeper enrol charterer")));

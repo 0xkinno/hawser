@@ -4,7 +4,7 @@
  * Four owners, five agents, one internal desk room. It never touches a messaging app.
  */
 import { randomBytes } from "node:crypto";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { Gateway, HttpError, registerAgent } from "@hawser/switch-client";
 
 const base = process.env.SWITCH_URL ?? "http://localhost:8000";
@@ -69,6 +69,32 @@ for (const o of owners) {
   }
 }
 
+const persons = [
+  {
+    key: "saltmarsh",
+    agent: "master-sim",
+    desc: "Stand-in for the master in tests. A simulated person, never a real one.",
+  },
+  {
+    key: "weserkai",
+    agent: "agent-sim",
+    desc: "Stand-in for the port agent in tests. A simulated person, never a real one.",
+  },
+  {
+    key: "kestrel",
+    agent: "charterer-sim",
+    desc: "Stand-in for the charterer's operations manager in tests. A simulated person, never a real one.",
+  },
+] as const;
+for (const p of persons) {
+  const o = world.owners[p.key];
+  const g = new Gateway(base);
+  await g.login(o.email, o.password);
+  const k = await g.mintRegistrationKey(`hawser-${p.agent}`);
+  const a = await registerAgent(base, k, { name: p.agent, description: p.desc, overwrite: true });
+  world.agents[p.agent] = { id: a.id, apiKey: a.api_key, owner: p.key };
+}
+
 const agentIds = Object.values(world.agents).map((a) => a.id);
 const room = await admin.createRoom({
   name: "call-saltmarsh-grace-brake",
@@ -79,5 +105,30 @@ const room = await admin.createRoom({
 });
 world.rooms.desk = { id: room.id, name: room.name };
 mkdirSync(".data", { recursive: true });
+const terms = JSON.parse(readFileSync("fixtures/terms/brake.json", "utf8"));
+const callConfig = {
+  terms,
+  participants: {
+    vessel: ["name:master-sim"],
+    agency: ["name:agent-sim"],
+    charterer: ["name:charterer-sim"],
+  },
+  authors: { vessel: "ship-mate", agency: "agency-clerk", charterer: "charter-desk" },
+  selfNames: ["timekeeper-a", "timekeeper-b"],
+  meta: {
+    vessel: "MV Saltmarsh Grace (fictional)",
+    port: "Brake, Germany",
+    cargo: "Bulk grain (fictional)",
+    charterRef: "C/P demo 2026",
+    fictional: true,
+  },
+  verifyUrl: process.env.HAWSER_VERIFY_URL ?? "https://hawser.vercel.app/verify",
+  signerNames: {
+    master: "Captain Rui Antunes (fictional)",
+    agent: "Jonas Weber (fictional)",
+    charterer: "Priya Nair (fictional)",
+  },
+};
+writeFileSync(".data/call-config.json", `${JSON.stringify(callConfig, null, 2)}\n`);
 writeFileSync(".data/world.json", `${JSON.stringify(world, null, 2)}\n`, { mode: 0o600 });
 console.log(JSON.stringify({ room: room.id, agents: Object.keys(world.agents) }));

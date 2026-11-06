@@ -2,11 +2,25 @@ import { randomUUID } from "node:crypto";
 import WebSocket from "ws";
 import { HttpError } from "./gateway";
 
+/**
+ * Sequence numbers are generation * 2^20 + n and pass JavaScript's safe-integer range after a server restart.
+ * `id`, `sequence`, `cursor` and `generation` are therefore kept as exact decimal strings whenever they are that large.
+ */
 export interface Frame {
   event: string;
   data: Record<string, unknown>;
-  id?: number;
+  id?: number | string;
 }
+
+const BIG = /"(id|sequence|cursor|generation)":(\d{15,})/g;
+export const parseFrame = (raw: string): Frame => JSON.parse(raw.replace(BIG, '"$1":"$2"')) as Frame;
+
+/** Compare two decimal ids exactly and return the larger as a string. */
+export const maxId = (a: string | number | undefined, b: string | number | undefined): string => {
+  const x = BigInt(a ?? 0);
+  const y = BigInt(b ?? 0);
+  return (x > y ? x : y).toString();
+};
 
 export interface OpenOptions {
   scope?: "single" | "all";
@@ -15,7 +29,7 @@ export interface OpenOptions {
   rooms?: string[];
   client?: string;
   clientVersion?: string;
-  expectedGeneration?: number;
+  expectedGeneration?: number | string;
   protocol?: number;
 }
 
@@ -94,11 +108,43 @@ export class AgentApi {
     ).events;
   }
 
-  async beat(cursor: number): Promise<number> {
+  /** Keep an exclusive role seat. The server's lease lasts 6 seconds, so call about every 2 seconds. */
+  async renewLease(): Promise<boolean> {
+    const r = await fetch(new URL(`/agents/${this.agentId}/leases/renew`, this.baseUrl), {
+      method: "POST",
+      headers: this.headers(true),
+    });
+    const text = await r.text();
+    if (!r.ok) throw new HttpError(r.status, text, `renew lease -> HTTP ${r.status}: ${text.slice(0, 300)}`);
+    return (JSON.parse(text) as { held: boolean }).held;
+  }
+
+  /** Post a file into a room as this agent. */
+  async postMedia(
+    roomId: string,
+    filename: string,
+    bytes: Uint8Array,
+    contentType: string,
+    caption?: string,
+  ): Promise<unknown> {
+    const form = new FormData();
+    form.append("file", new Blob([bytes], { type: contentType }), filename);
+    if (caption) form.append("caption", caption);
+    const r = await fetch(new URL(`/agents/${this.agentId}/rooms/${roomId}/media`, this.baseUrl), {
+      method: "POST",
+      headers: { Authorization: `Bearer ${this.apiKey}` },
+      body: form,
+    });
+    const text = await r.text();
+    if (!r.ok) throw new HttpError(r.status, text, `post media -> HTTP ${r.status}: ${text.slice(0, 300)}`);
+    return text ? JSON.parse(text) : {};
+  }
+
+  async beat(cursor: number | string): Promise<number> {
     const r = await fetch(new URL(`/agents/${this.agentId}/connection/beat`, this.baseUrl), {
       method: "POST",
       headers: this.headers(false),
-      body: JSON.stringify({ connection_id: this.connectionId, cursor }),
+      body: `{"connection_id":${JSON.stringify(this.connectionId)},"cursor":${cursor}}`,
     });
     return r.status;
   }
@@ -132,7 +178,7 @@ export class AgentSocket {
   private ws?: WebSocket;
   private waiters: Array<{ pred: (f: Frame) => boolean; resolve: (f: Frame) => void }> = [];
   private listeners: Array<(f: Frame) => void> = [];
-  cursor = 0;
+  cursor = "0";
 
   constructor(
     readonly api: AgentApi,
@@ -143,27 +189,35 @@ export class AgentSocket {
     this.listeners.push(fn);
   }
 
-  open(): Promise<void> {
+  /** Resolves once the server has registered the connection (first frame), rejects on a refusal. */
+  open(): Promise<Frame> {
     const url = this.api.openUrl("connection/ws", this.options);
     this.ws = new WebSocket(url, { headers: { Authorization: `Bearer ${this.api.apiKey}` } });
     return new Promise((resolve, reject) => {
       const ws = this.ws as WebSocket;
-      ws.on("open", () => resolve());
       ws.on("error", (e) => reject(e));
       ws.on("close", (code) => {
         this.closed = true;
         this.closeCode = code;
+        reject(new Error(`socket closed (code ${code}) before connection_state`));
       });
       ws.on("message", (raw) => {
-        const f = JSON.parse(String(raw)) as Frame;
+        const f = parseFrame(String(raw));
         if (f.event === "ping") {
           this.pings.push(Date.now());
-          ws.send(JSON.stringify({ type: "pong", cursor: this.cursor }));
+          ws.send(`{"type":"pong","cursor":${this.cursor}}`);
           return;
         }
-        if (typeof f.id === "number") this.cursor = Math.max(this.cursor, f.id);
-        if (f.event === "connection_state" && typeof f.data.cursor === "number")
-          this.cursor = Math.max(this.cursor, f.data.cursor);
+        if (f.event === "refused") {
+          this.frames.push(f);
+          reject(new Error(`refused: ${JSON.stringify(f.data)}`));
+          return;
+        }
+        if (f.id !== undefined) this.cursor = maxId(this.cursor, f.id);
+        if (f.event === "connection_state") {
+          const c = f.data.cursor;
+          if (typeof c === "number" || typeof c === "string") this.cursor = maxId(this.cursor, c);
+        }
         this.frames.push(f);
         for (const l of this.listeners) l(f);
         this.waiters = this.waiters.filter((w) => {
@@ -173,6 +227,7 @@ export class AgentSocket {
           }
           return true;
         });
+        if (f.event === "connection_state") resolve(f);
       });
     });
   }

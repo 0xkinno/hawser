@@ -48,6 +48,8 @@ export interface CallConfig {
   participants: Record<Party, string[]>;
   /** The Timekeeper's own participant ids. Never treated as people. */
   selfIds: string[];
+  /** The Timekeeper's own display names, for sender ids not known in advance. */
+  selfNames?: string[];
 }
 
 interface DocState {
@@ -80,6 +82,14 @@ export class Call {
   version = 0;
   lastContentSha = "";
   currentDigest = "";
+  /** Every document revision and Statement of Facts version seen, for the audit bundle. */
+  docHistory: Array<{ party: Party; revision: number; sha: string; content: string }> = [];
+  sofHistory: Array<{
+    version: number;
+    digest: string;
+    body: ReturnType<Call["sofBody"]>;
+    norDecision: NorDecision;
+  }> = [];
   private open = new Map<Party, string>();
   private queue: Array<{ party: Party; key: string; text: string }> = [];
   readonly posted = new Set<string>();
@@ -126,6 +136,7 @@ export class Call {
       );
     }
     this.docs[party] = { content, revision: rev.revision, sha: rev.sha, parsed };
+    this.docHistory.push({ party, revision: rev.revision, sha: rev.sha, content });
     const docName = `log-${party === "vessel" ? "vessel" : party === "agency" ? "agency" : "charterer"}`;
     const note = rev.nonAppend
       ? "NON-APPEND CHANGE: an earlier line was altered or removed."
@@ -188,7 +199,7 @@ export class Call {
   }
 
   /** Everything the SOF digest binds. The version number is added separately. */
-  private sofBody(r: ReconcileResult) {
+  sofBody(r: ReconcileResult) {
     return {
       callId: this.cfg.terms.callId,
       termsSha: fullSha(this.cfg.terms),
@@ -199,12 +210,7 @@ export class Call {
         verdict: e.verdict,
         sources: [...e.sources].sort(),
       })),
-      remarks: [
-        { norDecision: this.nor.decision, by: this.nor.by ?? null },
-        ...Object.entries(this.signatures)
-          .filter(([, s]) => s?.remarks)
-          .map(([p, s]) => ({ party: p, remarks: s?.remarks })),
-      ],
+      remarks: [{ norDecision: this.nor.decision, by: this.nor.by ?? null }],
       sourceFingerprints: Object.fromEntries(
         PARTIES.flatMap((p) => (this.docs[p] ? [[`log-${p}`, this.docs[p]?.sha ?? ""]] : [])),
       ),
@@ -307,12 +313,19 @@ export class Call {
     const bodyNoVersion = this.sofBody(r);
     const contentSha = fullSha(bodyNoVersion);
     const changed = contentSha !== this.lastContentSha;
-    const complete = r.missingCritical.length === 0;
+    const allLogs = PARTIES.every((p) => this.docs[p]?.parsed !== undefined);
+    const complete = r.missingCritical.length === 0 && allLogs;
     if (changed && (complete || Object.keys(this.signatures).length > 0)) {
       this.lastContentSha = contentSha;
       const hadSignatures = Object.keys(this.signatures).length > 0;
       this.version += 1;
       this.currentDigest = sofDigest({ ...bodyNoVersion, version: this.version });
+      this.sofHistory.push({
+        version: this.version,
+        digest: this.currentDigest,
+        body: bodyNoVersion,
+        norDecision: this.nor.decision,
+      });
       if (hadSignatures) {
         this.signatures = {};
         this.post(
@@ -362,7 +375,7 @@ export class Call {
 
   onMessage(m: IncomingMessage): Action[] {
     const out: Action[] = [];
-    if (this.cfg.selfIds.includes(m.sender)) return out;
+    if (this.cfg.selfIds.includes(m.sender) || this.cfg.selfNames?.includes(m.senderName)) return out;
     const cmd = parseCommand(m.body);
     const aimed = addressesTimekeeper(m.body, m.addressed);
     const reply = (text: string, kind = "reply") => this.post(out, m.room, `${kind}:${m.messageId}`, text);
@@ -371,7 +384,10 @@ export class Call {
       switch (cmd.verb) {
         case "enrol": {
           const party = partyOfRole(cmd.arg);
-          if (!this.cfg.participants[party].includes(m.sender)) {
+          const listed = this.cfg.participants[party].some(
+            (e) => e === m.sender || e === `name:${m.senderName}`,
+          );
+          if (!listed) {
             reply(
               `Enrolment refused: ${m.senderName} is not listed for the ${cmd.arg} side of this call. Nothing recorded.`,
             );
@@ -410,7 +426,6 @@ export class Call {
           const sig: Signature = { sender: m.sender, digest: cmd.arg };
           if (cmd.text) sig.remarks = cmd.text;
           this.signatures[party] = sig;
-          if (cmd.text) out.push(...this.recompute());
           const have = PARTIES.filter((p) => this.signatures[p]).length;
           reply(
             `${roleOfParty(party)} signed version ${this.version} (${cmd.arg})${cmd.text ? ` with remarks: ${cmd.text}` : ""}. ${have} of 3 signatures.`,
@@ -478,7 +493,7 @@ export class Call {
           const mt = /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2})\s+(\S+)$/.exec(cmd.text ?? "");
           if (!mt) {
             reply(
-              `Refused: give the time as YYYY-MM-DD HH:MM zone, for example 2026-11-13 16:41 Europe/Berlin. Nothing recorded.`,
+              "Refused: give the time as YYYY-MM-DD HH:MM zone, for example 2026-11-13 16:41 Europe/Berlin. Nothing recorded.",
             );
             break;
           }

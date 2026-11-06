@@ -185,6 +185,16 @@ describe("enrolment and signatures", () => {
     expect(again.some((a) => a.type === "closed")).toBe(false);
   });
 
+  it("signing with remarks keeps the remarks on that signature and does not void the others", () => {
+    const { c } = agreedCall();
+    const d = c.currentDigest;
+    c.onMessage(msg(IDS.master, `@timekeeper sign ${d}`));
+    c.onMessage(msg(IDS.jonas, `@timekeeper sign ${d}: tally differs by 2 t`));
+    expect(c.currentDigest).toBe(d);
+    expect(c.signatures.vessel?.digest).toBe(d);
+    expect(c.signatures.agency?.remarks).toBe("tally differs by 2 t");
+  });
+
   it("S3: refusing after signing withdraws that signature", () => {
     const { c } = agreedCall();
     const d = c.currentDigest;
@@ -316,6 +326,18 @@ describe("guarantees stay unit-level", () => {
     const c = new Call({ ...agreedCall().c.cfg, terms: { ...terms, demurrageCentsPerDay: 1 } });
     c.ingestDoc("vessel", doc("vessel", AGREED));
     c.ingestDoc("agency", doc("agency", AGREED));
+    c.ingestDoc("charterer", doc("charterer", []));
     expect(c.currentDigest).not.toBe(a);
+  });
+});
+
+describe("when a Statement of Facts version is issued", () => {
+  it("not until all three company logs exist, even if the events are complete", () => {
+    const c = newCall();
+    const a = c.ingestDoc("vessel", doc("vessel", AGREED));
+    const b = c.ingestDoc("agency", doc("agency", AGREED));
+    expect(joined(texts([...a, ...b]))).not.toContain("Statement of Facts version");
+    const d = c.ingestDoc("charterer", doc("charterer", []));
+    expect(joined(texts(d))).toContain("Statement of Facts version 1");
   });
 });
