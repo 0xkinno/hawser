@@ -5,7 +5,9 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.28.0",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "setup": "bash scripts/setup.sh",
     "lint": "biome check .",
@@ -18,7 +20,11 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@hawser/laytime": "workspace:*",
+    "@hawser/switch-client": "workspace:*",
     "@types/node": "^22.10.0",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   }
