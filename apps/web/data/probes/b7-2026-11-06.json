@@ -1,0 +1,26 @@
+{
+  "id": "b7",
+  "question": "Restart switch-core mid-call",
+  "status": "observed",
+  "summary": "Timekeeper reconnected and kept working: a message sent after the restart got its card; duplicate tags in the room history: 0; version 1 digest 426F432F unchanged. Timekeeper log lines: 11.",
+  "observed": {
+    "tagsBefore": 6,
+    "duplicateTagsAfter": [],
+    "timekeeperLog": [
+      "2026-11-06T08:39:08.631Z [timekeeper-a] connected, protocol 9, heartbeat 10s",
+      "2026-11-06T08:39:09.326Z [timekeeper-a] holds the timekeeper role",
+      "2026-11-06T08:39:11.370Z [timekeeper-a] rebuilt from the room: 0 tags, 18 messages, digest none",
+      "2026-11-06T08:39:12.671Z [timekeeper-a] connection closed: closed",
+      "2026-11-06T08:39:13.240Z [timekeeper-a] connection closed: open failed: connect ECONNREFUSED 127.0.0.1:8000",
+      "2026-11-06T08:39:14.079Z [timekeeper-a] connection closed: open failed: connect ECONNREFUSED 127.0.0.1:8000",
+      "2026-11-06T08:39:15.800Z [timekeeper-a] connection closed: open failed: connect ECONNREFUSED 127.0.0.1:8000",
+      "2026-11-06T08:39:19.754Z [timekeeper-a] connection closed: open failed: connect ECONNREFUSED 127.0.0.1:8000",
+      "2026-11-06T08:39:27.817Z [timekeeper-a] connected, protocol 9, heartbeat 10s",
+      "2026-11-06T08:39:28.302Z [timekeeper-a] holds the timekeeper role",
+      "2026-11-06T08:39:28.975Z [timekeeper-a] rebuilt from the room: 7 tags, 32 messages, digest 426F432F"
+    ]
+  },
+  "ranAt": "2026-11-06T08:39:32.175Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

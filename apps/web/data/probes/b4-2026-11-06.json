@@ -1,0 +1,60 @@
+{
+  "id": "b4",
+  "question": "agency-clerk rewrites its own log after all three signed",
+  "status": "observed",
+  "summary": "Rewrite detected, signatures voided, room told, new version issued in all 5 trials. Detection median 2.2 s (min 2.0, max 2.2) with the default 20 s poll, because Switch posts an \"updated room document\" notice that triggers an immediate re-read.",
+  "observed": {
+    "trials": [
+      {
+        "trial": 1,
+        "detectSeconds": 1.979,
+        "oldDigest": "426F432F",
+        "newDigest": "B64136B4",
+        "voidCard": "A source changed after signing. All signatures on the earlier version are void. Version 2 has digest B64136B4. Everyone signs again.",
+        "oldDigestRefused": true,
+        "pollMs": 20000
+      },
+      {
+        "trial": 2,
+        "detectSeconds": 2.191,
+        "oldDigest": "426F432F",
+        "newDigest": "B64136B4",
+        "voidCard": "A source changed after signing. All signatures on the earlier version are void. Version 2 has digest B64136B4. Everyone signs again.",
+        "oldDigestRefused": true,
+        "pollMs": 20000
+      },
+      {
+        "trial": 3,
+        "detectSeconds": 2.04,
+        "oldDigest": "426F432F",
+        "newDigest": "B64136B4",
+        "voidCard": "A source changed after signing. All signatures on the earlier version are void. Version 2 has digest B64136B4. Everyone signs again.",
+        "oldDigestRefused": true,
+        "pollMs": 20000
+      },
+      {
+        "trial": 4,
+        "detectSeconds": 2.211,
+        "oldDigest": "426F432F",
+        "newDigest": "B64136B4",
+        "voidCard": "A source changed after signing. All signatures on the earlier version are void. Version 2 has digest B64136B4. Everyone signs again.",
+        "oldDigestRefused": true,
+        "pollMs": 20000
+      },
+      {
+        "trial": 5,
+        "detectSeconds": 2.159,
+        "oldDigest": "426F432F",
+        "newDigest": "B64136B4",
+        "voidCard": "A source changed after signing. All signatures on the earlier version are void. Version 2 has digest B64136B4. Everyone signs again.",
+        "oldDigestRefused": true,
+        "pollMs": 20000
+      }
+    ],
+    "medianDetectSeconds": 2.159
+  },
+  "caveats": ["Simulated people on a local switch-core."],
+  "ranAt": "2026-11-06T08:45:46.055Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

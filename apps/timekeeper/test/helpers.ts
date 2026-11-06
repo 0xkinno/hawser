@@ -1,6 +1,6 @@
 import type { Party, Terms } from "@hawser/laytime";
+import { logHeader } from "@hawser/laytime";
 import { type Action, Call, type IncomingMessage } from "../src/call";
-import { logHeader } from "../src/logdoc";
 
 export const terms: Terms = {
   callId: "call-test",

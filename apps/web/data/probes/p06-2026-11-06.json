@@ -1,0 +1,45 @@
+{
+  "id": "p06",
+  "question": "Kill timekeeper-a while holding timekeeper. Seconds until assume_role succeeds for B?",
+  "status": "observed",
+  "summary": "Median 24.5 s over 5 trials (min 23.9, max 25.6). The holder renewed every 2 s; the server's lease TTL is 6 s (room_role_store.LEASE_TTL), so the floor is about 6 s minus the time since the last renewal. The standby polled every 250 ms.",
+  "observed": {
+    "trials": [
+      {
+        "trial": 1,
+        "failoverSeconds": 25.58,
+        "pollIntervalMs": 250,
+        "killToFirstAttemptMs": 1558
+      },
+      {
+        "trial": 2,
+        "failoverSeconds": 24.5,
+        "pollIntervalMs": 250,
+        "killToFirstAttemptMs": 1537
+      },
+      {
+        "trial": 3,
+        "failoverSeconds": 23.934,
+        "pollIntervalMs": 250,
+        "killToFirstAttemptMs": 1585
+      },
+      {
+        "trial": 4,
+        "failoverSeconds": 24.765,
+        "pollIntervalMs": 250,
+        "killToFirstAttemptMs": 1534
+      },
+      {
+        "trial": 5,
+        "failoverSeconds": 23.946,
+        "pollIntervalMs": 250,
+        "killToFirstAttemptMs": 1525
+      }
+    ],
+    "medianSeconds": 24.5,
+    "leaseTtlSecondsFromSource": 6
+  },
+  "ranAt": "2026-11-06T08:21:42.297Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

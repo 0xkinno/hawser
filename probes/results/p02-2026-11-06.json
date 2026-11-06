@@ -1,0 +1,16 @@
+{
+  "id": "p02",
+  "question": "Does SSE still work for our agent, and is it reported as fallback?",
+  "status": "observed",
+  "summary": "GET /events answered HTTP 200, content-type text/event-stream; charset=utf-8, first event connection_state. Compatibility headers: none seen. The frame carried no field naming SSE as a fallback.",
+  "observed": {
+    "status": 200,
+    "contentType": "text/event-stream; charset=utf-8",
+    "firstEvent": "connection_state",
+    "firstChunk": "event: connection_state\ndata: {\"connection_id\":\"68bc7f0c-2515-4cb8-9a79-99a349e92d1f\",\"agent_id\":\"53b42df1-334c-4555-8fdc-168b433719a5\",\"generation\":8589934756,\"scope\":\"all\",\"filter\":\"all\",\"spawn_capable\":false,\"rooms\":[\"9c58bdbd-90c1-48ec-a50c-9dce37a112d7\"],\"cursor\":0,\"position\":{\"s\":4294967323,\"r:7f0d8b0b-f012-4feb-869c-00f4db7fcaaa\":18,\"r:09324c90-6d69-4332-a346-990d38f8e630\":63,\"r:815d29e2-a17a-4997-9932-fd0280a991ea\":63,\"r:fb5db8fd-f2b2-470f-b370-e55b7cf54458\":54,\"r:10015c15-30eb-42fd-b3a2-9b2c332ebe88\":18,\"r:afb33add-64aa-467d-9ab5-953296842742\":42,\"r:f7e56be5-caf4-4f22-a926-421422bbf12",
+    "relevantHeaders": []
+  },
+  "ranAt": "2026-11-06T08:14:54.904Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

@@ -1,0 +1,153 @@
+{
+  "generated_from": "fixtures/scenarios, packages/laytime/test/external, probes/results, runs",
+  "scenario_sha": "cbd63500b6e2",
+  "engine_external_match": {
+    "n": 15,
+    "m": 16,
+    "mismatches": [
+      {
+        "id": "xshipx-ex1-shex-unless-used",
+        "reason": "The charter says SHEX unless used and the source does not list which Sunday and holiday periods were worked, so the engine, which does not model unless used, cannot reproduce it. The source is also internally inconsistent: 1d 9h 34m at USD 1,800 per day is USD 2,517.50, not USD 2,512.50."
+      }
+    ]
+  },
+  "scenarios": 6,
+  "scenario_outcomes": [
+    {
+      "id": "S1",
+      "divergences": 1,
+      "money_at_stake_usd": 0,
+      "questions_asked": 0,
+      "nor_valid": false,
+      "status": "NOT_TRIGGERED",
+      "off_unresolved_at_claim_stage": 2,
+      "on_surfaced_before_sailing": 2
+    },
+    {
+      "id": "S2",
+      "divergences": 0,
+      "money_at_stake_usd": 0,
+      "questions_asked": 0,
+      "nor_valid": true,
+      "status": "COUNTED",
+      "off_unresolved_at_claim_stage": 0,
+      "on_surfaced_before_sailing": 0
+    },
+    {
+      "id": "S3",
+      "divergences": 0,
+      "money_at_stake_usd": 0,
+      "questions_asked": 0,
+      "nor_valid": true,
+      "status": "COUNTED",
+      "off_unresolved_at_claim_stage": 0,
+      "on_surfaced_before_sailing": 0
+    },
+    {
+      "id": "S4",
+      "divergences": 1,
+      "money_at_stake_usd": 520.83,
+      "questions_asked": 1,
+      "nor_valid": false,
+      "status": "NOT_TRIGGERED",
+      "off_unresolved_at_claim_stage": 2,
+      "on_surfaced_before_sailing": 2
+    },
+    {
+      "id": "S5",
+      "divergences": 1,
+      "money_at_stake_usd": 5000,
+      "questions_asked": 1,
+      "nor_valid": true,
+      "status": "COUNTED",
+      "off_unresolved_at_claim_stage": 1,
+      "on_surfaced_before_sailing": 1
+    },
+    {
+      "id": "S6",
+      "divergences": 0,
+      "money_at_stake_usd": 0,
+      "questions_asked": 1,
+      "nor_valid": true,
+      "status": "COUNTED",
+      "off_unresolved_at_claim_stage": 1,
+      "on_surfaced_before_sailing": 1
+    }
+  ],
+  "divergences_found": 3,
+  "divergences_with_money": 2,
+  "questions_asked": 3,
+  "facts_reconciled": 22,
+  "counterfactual": {
+    "off_one_chat_thread": {
+      "surfaced_before_sailing": 0,
+      "left_for_the_claims_desk": 6
+    },
+    "on_hawser": {
+      "surfaced_before_sailing": 6,
+      "questions_asked": 3,
+      "priced": 3
+    }
+  },
+  "signatures": 3,
+  "run_bundle": {
+    "file": "call-saltmarsh-grace-brake-simulated-2026-11-06.json",
+    "mode": "simulated",
+    "label": "simulated people on a local switch-core in a cloud session"
+  },
+  "reconciler_variations": {
+    "seed": 1,
+    "variations": 20,
+    "events": 52,
+    "false_divergences": 0,
+    "missed_divergences": 0,
+    "abstained_ambiguous": 2,
+    "robustness_seeds": 300,
+    "robustness_events": 16498,
+    "robustness_false_divergences": 0,
+    "robustness_missed_divergences": 0,
+    "robustness_abstained_ambiguous": 271
+  },
+  "false_divergences": 0,
+  "missed_divergences": 0,
+  "lease_failover_seconds": 21.9,
+  "lease_failover_raw_seconds": 24.5,
+  "silent_rewrite_detect_seconds": 2.2,
+  "break_cases_passed": 10,
+  "break_cases_run": 10,
+  "break_cases_total": 11,
+  "break_cases_detail": {
+    "b1": true,
+    "b2": true,
+    "b3": true,
+    "b4": true,
+    "b5": "not_run",
+    "b6": true,
+    "b7": true,
+    "b8": true,
+    "b9": true,
+    "b10": true,
+    "b11": true
+  },
+  "ws_ping_interval_s": 10,
+  "probes": {
+    "p01": "observed",
+    "p02": "observed",
+    "p03": "observed",
+    "p04": "observed",
+    "p05": "not_yet_run",
+    "p06": "observed",
+    "p07": "observed",
+    "p08": "partial",
+    "p09": "observed",
+    "p10": "partial",
+    "p11": "observed",
+    "p12": "not_yet_run",
+    "p13": "not_runnable_here",
+    "p14": "observed"
+  },
+  "run_date": "2026-11-06",
+  "switch_core_version": "0.31.0",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "external_examples_total": 16
+}

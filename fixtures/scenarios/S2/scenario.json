@@ -1,0 +1,129 @@
+{
+  "id": "S2",
+  "labelled": "Shaped on public source named below. Companies, people and messages are fictional.",
+  "title": "Paranagua weekend",
+  "shapedOn": "Maritime Executive, 'The Hidden Clause Contradictions Driving Demurrage Claims' (31 May 2026): Saturday 08:00 arrival, NOR on arrival, laytime from Monday 08:00",
+  "tests": "Saturday arrival, laytime from Monday 08:00, weekend on the owner's side",
+  "terms": {
+    "callId": "call-saltmarsh-grace-brake",
+    "portZone": "America/Sao_Paulo",
+    "laytimeAllowedMin": 1440,
+    "demurrageCentsPerDay": 1250000,
+    "despatchCentsPerDay": 0,
+    "working": "SSHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5, 6, 7],
+      "from": "00:00",
+      "to": "24:00"
+    },
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "sourceUrl": "Fictional charter recap shaped on the public Brake facts. Not a real charter."
+  },
+  "decision": "NONE",
+  "logs": [
+    {
+      "party": "vessel",
+      "kind": "ARRIVED",
+      "localTime": "2026-11-14 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "vessel:ARRIVED:2026-11-14 08:00"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "ARRIVED",
+      "localTime": "2026-11-14 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "agency:ARRIVED:2026-11-14 08:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-14 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "vessel:NOR_TENDERED:2026-11-14 08:00"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-14 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "agency:NOR_TENDERED:2026-11-14 08:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "ALL_FAST",
+      "localTime": "2026-11-16 09:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "agency:ALL_FAST:2026-11-16 09:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "ALL_FAST",
+      "localTime": "2026-11-16 09:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "vessel:ALL_FAST:2026-11-16 09:00"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-17 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "agency:COMPLETED:2026-11-17 08:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-17 08:00",
+      "zone": "America/Sao_Paulo",
+      "source": {
+        "type": "message",
+        "ref": "vessel:COMPLETED:2026-11-17 08:00"
+      },
+      "enteredBy": "vessel-agent"
+    }
+  ],
+  "expected": {
+    "divergenceKinds": [],
+    "questionsAsked": 0,
+    "commencedLocal": "2026-11-16 08:00",
+    "usedMin": 1440,
+    "status": "COUNTED"
+  }
+}

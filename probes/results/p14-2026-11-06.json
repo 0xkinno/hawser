@@ -1,0 +1,66 @@
+{
+  "id": "p14",
+  "question": "Is Switch Trust available on this server?",
+  "status": "observed",
+  "summary": "Gateway answers: {\"/trust-settings\":{\"endpoint\":\"https://api.switchagents.ai\",\"policy_id\":null,\"has_api_key\":false,\"api_key_last4\":null,\"enabled\":false},\"/feature-flags\":{\"flags\":[{\"key\":\"agent_chats\",\"enabled\":false},{\"key\":\"agent_management\",\"enabled\":false},{\"key\":\"buddy_slack_handoff\",\"enabled\":false},{\"key\":\"ecosystem.show_owners\",\"enabled\":false},{\"key\":\"follow_the_conversation\",\"enabled\":false},{\"key\":\"group_chats\",\"enabled\":false},{\"key\":\"hosted_agents\",\"enabled\":false},{\"key\":\"organization_connector_apps\",\"enabled\":false},{\"key\":\"service_connections\",\"enabled\":false},{\"key\":\"switch_buddy\",\"enabled\":false},{\"key\":\"switch_cloud\",\"enabled\":false}]}}. Switch Trust is not used by HAWSER and is not claimed.",
+  "observed": {
+    "/trust-settings": {
+      "endpoint": "https://api.switchagents.ai",
+      "policy_id": null,
+      "has_api_key": false,
+      "api_key_last4": null,
+      "enabled": false
+    },
+    "/feature-flags": {
+      "flags": [
+        {
+          "key": "agent_chats",
+          "enabled": false
+        },
+        {
+          "key": "agent_management",
+          "enabled": false
+        },
+        {
+          "key": "buddy_slack_handoff",
+          "enabled": false
+        },
+        {
+          "key": "ecosystem.show_owners",
+          "enabled": false
+        },
+        {
+          "key": "follow_the_conversation",
+          "enabled": false
+        },
+        {
+          "key": "group_chats",
+          "enabled": false
+        },
+        {
+          "key": "hosted_agents",
+          "enabled": false
+        },
+        {
+          "key": "organization_connector_apps",
+          "enabled": false
+        },
+        {
+          "key": "service_connections",
+          "enabled": false
+        },
+        {
+          "key": "switch_buddy",
+          "enabled": false
+        },
+        {
+          "key": "switch_cloud",
+          "enabled": false
+        }
+      ]
+    }
+  },
+  "ranAt": "2026-11-06T08:14:54.147Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

@@ -1,5 +1,5 @@
-import type { LogEntry, Party } from "@hawser/laytime";
 import { z } from "zod";
+import type { LogEntry, Party } from "./types";
 
 const KINDS = [
   "EOSP",

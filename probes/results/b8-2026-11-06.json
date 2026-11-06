@@ -1,0 +1,30 @@
+{
+  "id": "b8",
+  "question": "Priya addresses @mate (cross-company addressing)",
+  "status": "partial",
+  "summary": "A charterer-side AGENT (charter-desk, owner kestrel-charterer) addressed @ship-mate (owner saltmarsh-owner, default owner-only policy). Refusal messages seen: 1. Text: \"@charter-desk You're not permitted to direct messages to me in this room — my operator has restricted who can address me here.\" posted as \"ship-mate\".",
+  "observed": {
+    "refusals": [
+      {
+        "sender": "@switch-agent-4d74b066:localhost",
+        "name": "ship-mate",
+        "body": "@charter-desk You're not permitted to direct messages to me in this room — my operator has restricted who can address me here.",
+        "id": "sw_a2a5882a1cf94153955d309794953e0a"
+      }
+    ],
+    "allRoomMessagesAfter": [
+      {
+        "sender": "@switch-agent-4d74b066:localhost",
+        "name": "ship-mate",
+        "body": "@charter-desk You're not permitted to direct messages to me in this room — my operator has restricted who can address me here.",
+        "id": "sw_a2a5882a1cf94153955d309794953e0a"
+      }
+    ]
+  },
+  "caveats": [
+    "The sender was an agent, not a human on Slack or Telegram. The human case still needs the real messaging apps."
+  ],
+  "ranAt": "2026-11-06T08:41:21.339Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

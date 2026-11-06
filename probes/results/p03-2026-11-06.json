@@ -1,0 +1,23 @@
+{
+  "id": "p03",
+  "question": "Agent B calls update_room_document on agent A's document. Result?",
+  "status": "observed",
+  "summary": "ship-mate update on charter-desk's log-charterer: {\"refused\":true,\"status\":403,\"body\":\"{\\\"detail\\\":\\\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document 4b3eb518-bd97-4625-860f-5d5bb0d57f42\\\"}\"}. delete: {\"refused\":true,\"status\":403,\"body\":\"{\\\"detail\\\":\\\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document 4b3eb518-bd97-4625-860f-5d5bb0d57f42\\\"}\"}. Content unchanged afterwards: true.",
+  "observed": {
+    "edit": {
+      "refused": true,
+      "status": 403,
+      "body": "{\"detail\":\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document 4b3eb518-bd97-4625-860f-5d5bb0d57f42\"}"
+    },
+    "delete": {
+      "refused": true,
+      "status": 403,
+      "body": "{\"detail\":\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document 4b3eb518-bd97-4625-860f-5d5bb0d57f42\"}"
+    },
+    "contentUnchanged": true,
+    "bothRefused": true
+  },
+  "ranAt": "2026-11-06T08:15:44.268Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

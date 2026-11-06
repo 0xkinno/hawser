@@ -1,0 +1,226 @@
+{
+  "id": "p07",
+  "question": "Restart switch-core. Does the agent see a gap frame? Does the cursor survive?",
+  "status": "observed",
+  "summary": "Before: generation 8589934851, cursor 9007194959775662. After restart the old socket: socket closed with code 1006. The pre-restart cursor was a ticket id; a message posted after the restart was queued for the resume. Resume attempts: resumeWithOldCursorAndGeneration: opened, frames after connection_state {\"message\":1}; resumeWithOldCursorNoGeneration: opened, frames after connection_state {\"message\":1}; openAtHead: opened, frames after connection_state {}.",
+  "observed": {
+    "generationBefore": "8589934851",
+    "cursorBefore": "9007194959775662",
+    "oldSocket": "socket closed with code 1006",
+    "attempts": {
+      "resumeWithOldCursorAndGeneration": {
+        "opened": true,
+        "firstFrame": "connection_state",
+        "state": {
+          "connection_id": "063be993-2609-466b-a433-a2fceb6e784c",
+          "agent_id": "53b42df1-334c-4555-8fdc-168b433719a5",
+          "generation": 8589934881,
+          "scope": "all",
+          "filter": "all",
+          "spawn_capable": false,
+          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "cursor": 0,
+          "position": {
+            "s": 4294967323,
+            "r:09324c90-6d69-4332-a346-990d38f8e630": 63,
+            "r:0a7215ad-570d-4b86-a2d4-8417696bdde7": 18,
+            "r:10015c15-30eb-42fd-b3a2-9b2c332ebe88": 18,
+            "r:1d2fc2f4-1da4-4971-b68a-1807b3df725b": 18,
+            "r:1e7cb3c4-5ac8-40ee-8e26-e4ddb9a21032": 18,
+            "r:220cad27-ec71-48fb-bd36-aa2c7bbd8344": 19,
+            "r:30c3574d-5bca-4c2d-a0df-a3fcf35d781b": 19,
+            "r:4ba23522-cd6b-4784-bcb1-0cfdf179125e": 18,
+            "r:5ec14362-b20f-4701-b279-786d57aa6e0a": 18,
+            "r:5f507086-0198-4f49-90c8-b3124f117a01": 17,
+            "r:61f90dc2-39f7-47b8-8394-d2af473abfa8": 18,
+            "r:6226aa93-36e7-41d0-8a90-90488433ca7d": 19,
+            "r:62315b45-6798-4368-9c44-9319140041c6": 63,
+            "r:74146519-a38f-4eed-8190-a50dead5408e": 18,
+            "r:75658e35-1dd9-4007-bfb3-fe62369b228e": 19,
+            "r:769bbb4b-0f8c-42a6-ba88-1d518f93d19b": 19,
+            "r:7f0d8b0b-f012-4feb-869c-00f4db7fcaaa": 18,
+            "r:815d29e2-a17a-4997-9932-fd0280a991ea": 63,
+            "r:8dfc4c6c-aada-407c-851e-b0776a7340ea": 53,
+            "r:9c58bdbd-90c1-48ec-a50c-9dce37a112d7": 45,
+            "r:9ed07144-e3e6-4c31-9ee2-228f337f3997": 18,
+            "r:a6fd93a6-4760-4491-a6b9-85b77592c4f1": 18,
+            "r:a8979cfb-a050-42ca-8282-b9f0100b2602": 18,
+            "r:ad640356-09fb-436a-b86e-72176e795d7a": 18,
+            "r:afb33add-64aa-467d-9ab5-953296842742": 42,
+            "r:b14a69f1-8003-49cc-93a9-5a4e7a65d462": 54,
+            "r:b90f0336-fa68-4610-94ff-0af97759401f": 18,
+            "r:bd942bac-3488-4d2f-beb2-f6a7143d9177": 19,
+            "r:ca79071f-7fb9-4e71-b529-94e404808a61": 18,
+            "r:cac89efd-f6cb-4591-aee5-fe3e2120fc74": 42,
+            "r:e82d2a7b-5124-4cac-859a-246ecbd373f4": 18,
+            "r:f08efd16-b249-4f3d-ad85-286c843af4fb": 19,
+            "r:f7e56be5-caf4-4f22-a926-421422bbf123": 17,
+            "r:fb5db8fd-f2b2-470f-b370-e55b7cf54458": 54
+          },
+          "protocol": 9,
+          "heartbeat_interval_seconds": 10,
+          "server": {
+            "version": "0.31.0",
+            "contracts": {
+              "agent-protocol": {
+                "speaks": 9,
+                "accepts": 1
+              }
+            }
+          },
+          "client": {
+            "speaks": null,
+            "accepts": null,
+            "artifact": null,
+            "version": null
+          }
+        },
+        "framesAfter": ["message"]
+      },
+      "resumeWithOldCursorNoGeneration": {
+        "opened": true,
+        "firstFrame": "connection_state",
+        "state": {
+          "connection_id": "063be993-2609-466b-a433-a2fceb6e784c",
+          "agent_id": "53b42df1-334c-4555-8fdc-168b433719a5",
+          "generation": 8589934882,
+          "scope": "all",
+          "filter": "all",
+          "spawn_capable": false,
+          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "cursor": 0,
+          "position": {
+            "s": 4294967323,
+            "r:09324c90-6d69-4332-a346-990d38f8e630": 63,
+            "r:0a7215ad-570d-4b86-a2d4-8417696bdde7": 18,
+            "r:10015c15-30eb-42fd-b3a2-9b2c332ebe88": 18,
+            "r:1d2fc2f4-1da4-4971-b68a-1807b3df725b": 18,
+            "r:1e7cb3c4-5ac8-40ee-8e26-e4ddb9a21032": 18,
+            "r:220cad27-ec71-48fb-bd36-aa2c7bbd8344": 19,
+            "r:30c3574d-5bca-4c2d-a0df-a3fcf35d781b": 19,
+            "r:4ba23522-cd6b-4784-bcb1-0cfdf179125e": 18,
+            "r:5ec14362-b20f-4701-b279-786d57aa6e0a": 18,
+            "r:5f507086-0198-4f49-90c8-b3124f117a01": 17,
+            "r:61f90dc2-39f7-47b8-8394-d2af473abfa8": 18,
+            "r:6226aa93-36e7-41d0-8a90-90488433ca7d": 19,
+            "r:62315b45-6798-4368-9c44-9319140041c6": 63,
+            "r:74146519-a38f-4eed-8190-a50dead5408e": 18,
+            "r:75658e35-1dd9-4007-bfb3-fe62369b228e": 19,
+            "r:769bbb4b-0f8c-42a6-ba88-1d518f93d19b": 19,
+            "r:7f0d8b0b-f012-4feb-869c-00f4db7fcaaa": 18,
+            "r:815d29e2-a17a-4997-9932-fd0280a991ea": 63,
+            "r:8dfc4c6c-aada-407c-851e-b0776a7340ea": 53,
+            "r:9c58bdbd-90c1-48ec-a50c-9dce37a112d7": 45,
+            "r:9ed07144-e3e6-4c31-9ee2-228f337f3997": 18,
+            "r:a6fd93a6-4760-4491-a6b9-85b77592c4f1": 18,
+            "r:a8979cfb-a050-42ca-8282-b9f0100b2602": 18,
+            "r:ad640356-09fb-436a-b86e-72176e795d7a": 18,
+            "r:afb33add-64aa-467d-9ab5-953296842742": 42,
+            "r:b14a69f1-8003-49cc-93a9-5a4e7a65d462": 54,
+            "r:b90f0336-fa68-4610-94ff-0af97759401f": 18,
+            "r:bd942bac-3488-4d2f-beb2-f6a7143d9177": 19,
+            "r:ca79071f-7fb9-4e71-b529-94e404808a61": 18,
+            "r:cac89efd-f6cb-4591-aee5-fe3e2120fc74": 42,
+            "r:e82d2a7b-5124-4cac-859a-246ecbd373f4": 18,
+            "r:f08efd16-b249-4f3d-ad85-286c843af4fb": 19,
+            "r:f7e56be5-caf4-4f22-a926-421422bbf123": 17,
+            "r:fb5db8fd-f2b2-470f-b370-e55b7cf54458": 54
+          },
+          "protocol": 9,
+          "heartbeat_interval_seconds": 10,
+          "server": {
+            "version": "0.31.0",
+            "contracts": {
+              "agent-protocol": {
+                "speaks": 9,
+                "accepts": 1
+              }
+            }
+          },
+          "client": {
+            "speaks": null,
+            "accepts": null,
+            "artifact": null,
+            "version": null
+          }
+        },
+        "framesAfter": ["message"]
+      },
+      "openAtHead": {
+        "opened": true,
+        "firstFrame": "connection_state",
+        "state": {
+          "connection_id": "063be993-2609-466b-a433-a2fceb6e784c",
+          "agent_id": "53b42df1-334c-4555-8fdc-168b433719a5",
+          "generation": 8589934883,
+          "scope": "all",
+          "filter": "all",
+          "spawn_capable": false,
+          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "cursor": 0,
+          "position": {
+            "s": 4294967323,
+            "r:ad640356-09fb-436a-b86e-72176e795d7a": 18,
+            "r:4ba23522-cd6b-4784-bcb1-0cfdf179125e": 18,
+            "r:9ed07144-e3e6-4c31-9ee2-228f337f3997": 18,
+            "r:afb33add-64aa-467d-9ab5-953296842742": 42,
+            "r:b14a69f1-8003-49cc-93a9-5a4e7a65d462": 54,
+            "r:1e7cb3c4-5ac8-40ee-8e26-e4ddb9a21032": 18,
+            "r:fb5db8fd-f2b2-470f-b370-e55b7cf54458": 54,
+            "r:a8979cfb-a050-42ca-8282-b9f0100b2602": 18,
+            "r:75658e35-1dd9-4007-bfb3-fe62369b228e": 19,
+            "r:30c3574d-5bca-4c2d-a0df-a3fcf35d781b": 19,
+            "r:6226aa93-36e7-41d0-8a90-90488433ca7d": 19,
+            "r:5f507086-0198-4f49-90c8-b3124f117a01": 17,
+            "r:0a7215ad-570d-4b86-a2d4-8417696bdde7": 18,
+            "r:769bbb4b-0f8c-42a6-ba88-1d518f93d19b": 19,
+            "r:9c58bdbd-90c1-48ec-a50c-9dce37a112d7": 45,
+            "r:7f0d8b0b-f012-4feb-869c-00f4db7fcaaa": 18,
+            "r:e82d2a7b-5124-4cac-859a-246ecbd373f4": 18,
+            "r:ca79071f-7fb9-4e71-b529-94e404808a61": 18,
+            "r:bd942bac-3488-4d2f-beb2-f6a7143d9177": 19,
+            "r:815d29e2-a17a-4997-9932-fd0280a991ea": 63,
+            "r:62315b45-6798-4368-9c44-9319140041c6": 63,
+            "r:74146519-a38f-4eed-8190-a50dead5408e": 18,
+            "r:a6fd93a6-4760-4491-a6b9-85b77592c4f1": 18,
+            "r:09324c90-6d69-4332-a346-990d38f8e630": 63,
+            "r:220cad27-ec71-48fb-bd36-aa2c7bbd8344": 19,
+            "r:f08efd16-b249-4f3d-ad85-286c843af4fb": 19,
+            "r:f7e56be5-caf4-4f22-a926-421422bbf123": 17,
+            "r:1d2fc2f4-1da4-4971-b68a-1807b3df725b": 18,
+            "r:8dfc4c6c-aada-407c-851e-b0776a7340ea": 53,
+            "r:61f90dc2-39f7-47b8-8394-d2af473abfa8": 18,
+            "r:5ec14362-b20f-4701-b279-786d57aa6e0a": 19,
+            "r:b90f0336-fa68-4610-94ff-0af97759401f": 18,
+            "r:10015c15-30eb-42fd-b3a2-9b2c332ebe88": 18,
+            "r:cac89efd-f6cb-4591-aee5-fe3e2120fc74": 42
+          },
+          "protocol": 9,
+          "heartbeat_interval_seconds": 10,
+          "server": {
+            "version": "0.31.0",
+            "contracts": {
+              "agent-protocol": {
+                "speaks": 9,
+                "accepts": 1
+              }
+            }
+          },
+          "client": {
+            "speaks": null,
+            "accepts": null,
+            "artifact": null,
+            "version": null
+          }
+        },
+        "framesAfter": []
+      }
+    }
+  },
+  "caveats": [
+    "The server restart here is a local process restart, not a Codespace stop or a Docker restart."
+  ],
+  "ranAt": "2026-11-06T08:19:00.129Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

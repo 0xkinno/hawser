@@ -88,6 +88,7 @@ const persons = [
 ] as const;
 for (const p of persons) {
   const o = world.owners[p.key];
+  if (!o) throw new Error(`no owner ${p.key}`);
   const g = new Gateway(base);
   await g.login(o.email, o.password);
   const k = await g.mintRegistrationKey(`hawser-${p.agent}`);

@@ -1,0 +1,131 @@
+{
+  "id": "S1",
+  "labelled": "Shaped on public source named below. Companies, people and messages are fictional.",
+  "title": "Brake Friday",
+  "shapedOn": "[2026] EWHC 950 (Comm), as read from the National Archives page on 6 November 2026: NOR tendered before the vessel was an arrived ship; anchoring 1100 per the SOF against 1450 per the vessel log",
+  "tests": "invalid NOR, anchoring disagreement priced at zero under that clause so nobody is asked, two-column sheet",
+  "terms": {
+    "callId": "call-saltmarsh-grace-brake",
+    "portZone": "Europe/Berlin",
+    "laytimeAllowedMin": 1440,
+    "demurrageCentsPerDay": 1250000,
+    "despatchCentsPerDay": 0,
+    "working": "SSHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5],
+      "from": "08:00",
+      "to": "17:00"
+    },
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "sourceUrl": "Fictional charter recap shaped on the public Brake facts. Not a real charter."
+  },
+  "decision": "NONE",
+  "logs": [
+    {
+      "party": "vessel",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-13 10:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:NOR_TENDERED:2026-11-13 10:00"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-13 10:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:NOR_TENDERED:2026-11-13 10:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "ANCHORED",
+      "localTime": "2026-11-13 11:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:ANCHORED:2026-11-13 11:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "ANCHORED",
+      "localTime": "2026-11-13 14:50",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:ANCHORED:2026-11-13 14:50"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "ALL_FAST",
+      "localTime": "2026-11-16 09:12",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:ALL_FAST:2026-11-16 09:12"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "ALL_FAST",
+      "localTime": "2026-11-16 09:12",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:ALL_FAST:2026-11-16 09:12"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-19 08:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:COMPLETED:2026-11-19 08:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-19 08:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:COMPLETED:2026-11-19 08:00"
+      },
+      "enteredBy": "vessel-agent"
+    }
+  ],
+  "expected": {
+    "divergenceKinds": ["ANCHORED"],
+    "questionsAsked": 0,
+    "moneyAtStakeCentsByKind": {
+      "ANCHORED": 0
+    },
+    "norValid": false,
+    "status": "NOT_TRIGGERED"
+  }
+}

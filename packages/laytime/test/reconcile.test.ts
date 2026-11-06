@@ -125,3 +125,25 @@ describe("reconcile", () => {
     expect(r.agreed[0]?.verdict).toBe("REVIEW");
   });
 });
+
+describe("ambiguous wall-clock times", () => {
+  it("abstains on the repeated hour when clocks go back in Berlin instead of guessing an occurrence", () => {
+    const r = reconcile([entry("vessel", "ALL_FAST", "2026-10-25 02:30", Z)], brakeTerms, "NONE");
+    expect(r.agreed).toEqual([]);
+    expect(r.abstentions[0]?.reason).toContain("happens twice");
+  });
+  it("abstains on a time that does not exist when clocks go forward", () => {
+    const r = reconcile([entry("vessel", "ALL_FAST", "2026-03-29 02:30", Z)], brakeTerms, "NONE");
+    expect(r.abstentions[0]?.reason).toContain("does not exist");
+  });
+  it("accepts the same wall time when it is written with a fixed offset", () => {
+    const r = reconcile([entry("vessel", "ALL_FAST", "2026-10-25 02:30", "UTC+01:00")], brakeTerms, "NONE");
+    expect(r.abstentions).toEqual([]);
+    expect(r.agreed[0]?.utc).toBe("2026-10-25T01:30:00Z");
+  });
+  it("accepts an ordinary Berlin time", () => {
+    expect(
+      reconcile([entry("vessel", "ALL_FAST", "2026-11-16 09:12", Z)], brakeTerms, "NONE").abstentions,
+    ).toEqual([]);
+  });
+});

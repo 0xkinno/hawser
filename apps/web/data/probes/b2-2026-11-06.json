@@ -1,0 +1,13 @@
+{
+  "id": "b2",
+  "question": "Priya replies 'noted'",
+  "status": "partial",
+  "summary": "Recorded as received, not accepted, with the rule cited: \"Recorded as received, not as accepted. Laytime does not start on this message. To decide, reply: @timekeeper accept nor 72AE93F0 | accept nor without prejudice 72AE93F0 | reject nor 72AE93F0: reason\".",
+  "observed": {
+    "card": "Recorded as received, not as accepted. Laytime does not start on this message. To decide, reply: @timekeeper accept nor 72AE93F0 | accept nor without prejudice 72AE93F0 | reject nor 72AE93F0: reason\n[hk:rna:sw_6b086797e05142348f97425813cd3584]"
+  },
+  "caveats": ["The sender was a stand-in agent called charterer-sim, not a person on Slack."],
+  "ranAt": "2026-11-06T08:30:47.568Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

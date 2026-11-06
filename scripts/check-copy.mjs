@@ -30,7 +30,14 @@ const SKIP_FILES = new Set([
   "LICENSE",
   ".claude/settings.json",
 ]);
-const SKIP_PREFIXES = ["scripts/test/", "probes/results/", "runs/"];
+const SKIP_PREFIXES = [
+  "scripts/test/",
+  "probes/results/",
+  "runs/",
+  "apps/web/data/",
+  "apps/web/public/data/",
+  "apps/web/.next/",
+];
 const EXTS = new Set([
   ".md",
   ".ts",

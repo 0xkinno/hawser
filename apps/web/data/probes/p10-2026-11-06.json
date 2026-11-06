@@ -1,0 +1,39 @@
+{
+  "id": "p10",
+  "question": "Does list_participants expose enough to bind a participant id to a party (name, kind, linked user)?",
+  "status": "partial",
+  "summary": "list_participants fields: id, name, type, status, alias. Message events carry sender \"@switch-agent-bba75a09:localhost\" and sender_name \"master-sim\". The participant list id is an agent uuid, not the @ sender id, and carries no linked user. Binding therefore uses the @ sender id learned at enrolment, or an explicit name entry.",
+  "observed": {
+    "listParticipantsFields": ["id", "name", "type", "status", "alias"],
+    "sample": {
+      "id": "0fd3c13a-28a2-4e0a-9c64-493e29cf7e77",
+      "name": "ship-mate",
+      "type": "agent",
+      "status": "live",
+      "alias": null
+    },
+    "messagePayloadKeys": [
+      "addressed",
+      "sender",
+      "sender_name",
+      "sender_kind",
+      "on_behalf_of",
+      "message_id",
+      "body",
+      "timestamp",
+      "thread_id",
+      "attachments",
+      "opening_message",
+      "sender_role",
+      "switch_notice"
+    ],
+    "senderSample": "@switch-agent-bba75a09:localhost",
+    "onBehalfOf": null
+  },
+  "caveats": [
+    "Agents only. For a human on a messaging app, on_behalf_of and the linked Switch user were not observable without a real platform account."
+  ],
+  "ranAt": "2026-11-06T08:14:48.950Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

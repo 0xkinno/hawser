@@ -1,21 +1,24 @@
 import {
   type AgreedEvent,
   type NorDecision,
+  type ParsedLog,
   type Party,
   type ReconcileResult,
   type Terms,
   bothScenarios,
   computeLaytime,
   decidingParty,
+  effectiveEntries,
   formatUsd,
   fullSha,
   norValidity,
+  parseLog,
   parseLogTime,
   reconcile,
   sofDigest,
 } from "@hawser/laytime";
 import { DateTime } from "luxon";
-import { type ParsedLog, effectiveEntries, parseLog } from "./logdoc";
+
 import { pairsMoneyWithLaytime } from "./moneyGuard";
 import {
   GRAMMAR_HELP,
@@ -268,7 +271,9 @@ export class Call {
         out,
         a.party,
         key,
-        `Question for ${roleOfParty(a.party)}: your ${a.kind} at ${a.localTime} has no time zone, so it is not placed. Is that ship's time with its UTC offset, or port local time (${z})? Correct the line in your log with the zone.`,
+        a.reason.startsWith("no zone")
+          ? `Question for ${roleOfParty(a.party)}: your ${a.kind} at ${a.localTime} has no time zone, so it is not placed. Is that ship's time with its UTC offset, or port local time (${z})? Correct the line in your log with the zone.`
+          : `Question for ${roleOfParty(a.party)}: your ${a.kind} at ${a.localTime} is not placed: ${a.reason}. Correct the line in your log with the zone written as an offset, for example UTC+01:00.`,
       );
     }
     for (const d of r.divergences) {

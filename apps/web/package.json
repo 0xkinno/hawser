@@ -1,0 +1,31 @@
+{
+  "name": "@hawser/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "sync": "tsx scripts/sync-data.ts",
+    "sync:check": "tsx scripts/sync-data.ts --check",
+    "prebuild": "tsx scripts/sync-data.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist-mono": "^5.1.0",
+    "@fontsource-variable/newsreader": "^5.1.0",
+    "@fontsource-variable/schibsted-grotesk": "^5.1.0",
+    "@hawser/laytime": "workspace:*",
+    "luxon": "^3.5.0",
+    "next": "15.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.49.0",
+    "@types/luxon": "^3.4.2",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2"
+  }
+}

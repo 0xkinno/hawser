@@ -1,0 +1,15 @@
+{
+  "id": "p09",
+  "question": "send_targeted_message to an agent that does not admit the sender. Per-target status?",
+  "status": "observed",
+  "summary": "charter-desk to ship-mate (owner-only): {\"event_id\":\"sw_3dd7a951a8cf41bcbf53511d78963d54\",\"target_statuses\":{\"ship-mate\":\"not_permitted\"}}",
+  "observed": {
+    "event_id": "sw_3dd7a951a8cf41bcbf53511d78963d54",
+    "target_statuses": {
+      "ship-mate": "not_permitted"
+    }
+  },
+  "ranAt": "2026-11-06T08:15:57.035Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

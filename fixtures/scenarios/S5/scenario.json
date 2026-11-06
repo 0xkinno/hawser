@@ -1,0 +1,156 @@
+{
+  "id": "S5",
+  "labelled": "Shaped on public source named below. Companies, people and messages are fictional.",
+  "title": "Rain stoppage",
+  "shapedOn": "Voyager Portal: a miscategorised six hour weather event at USD 20,000 per day changes a claim by USD 5,000",
+  "tests": "a six hour weather stoppage ends at different times in two logs; money at stake USD 5,000",
+  "terms": {
+    "callId": "call-saltmarsh-grace-brake",
+    "portZone": "Europe/Berlin",
+    "laytimeAllowedMin": 0,
+    "demurrageCentsPerDay": 2000000,
+    "despatchCentsPerDay": 0,
+    "working": "SSHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [1, 2, 3, 4, 5],
+      "from": "08:00",
+      "to": "17:00"
+    },
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": ["weather"],
+    "onceOnDemurrage": false,
+    "moneyQuestionThresholdCents": 25000,
+    "sourceUrl": "Fictional charter recap shaped on the public Brake facts. Not a real charter."
+  },
+  "decision": "NONE",
+  "logs": [
+    {
+      "party": "vessel",
+      "kind": "ANCHORED",
+      "localTime": "2026-11-13 14:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:ANCHORED:2026-11-13 14:00"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "ANCHORED",
+      "localTime": "2026-11-13 14:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:ANCHORED:2026-11-13 14:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-13 16:41",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:NOR_TENDERED:2026-11-13 16:41"
+      },
+      "enteredBy": "vessel-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "NOR_TENDERED",
+      "localTime": "2026-11-13 16:41",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:NOR_TENDERED:2026-11-13 16:41"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "agency",
+      "kind": "STOPPAGE_START",
+      "localTime": "2026-11-16 10:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:STOPPAGE_START:2026-11-16 10:00"
+      },
+      "enteredBy": "agency-agent",
+      "reason": "weather"
+    },
+    {
+      "party": "agency",
+      "kind": "STOPPAGE_END",
+      "localTime": "2026-11-16 16:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:STOPPAGE_END:2026-11-16 16:00"
+      },
+      "enteredBy": "agency-agent",
+      "reason": "weather"
+    },
+    {
+      "party": "vessel",
+      "kind": "STOPPAGE_START",
+      "localTime": "2026-11-16 10:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:STOPPAGE_START:2026-11-16 10:00"
+      },
+      "enteredBy": "vessel-agent",
+      "reason": "weather"
+    },
+    {
+      "party": "vessel",
+      "kind": "STOPPAGE_END",
+      "localTime": "2026-11-16 10:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:STOPPAGE_END:2026-11-16 10:00"
+      },
+      "enteredBy": "vessel-agent",
+      "reason": "weather"
+    },
+    {
+      "party": "agency",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-16 18:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "agency:COMPLETED:2026-11-16 18:00"
+      },
+      "enteredBy": "agency-agent"
+    },
+    {
+      "party": "vessel",
+      "kind": "COMPLETED",
+      "localTime": "2026-11-16 18:00",
+      "zone": "Europe/Berlin",
+      "source": {
+        "type": "message",
+        "ref": "vessel:COMPLETED:2026-11-16 18:00"
+      },
+      "enteredBy": "vessel-agent"
+    }
+  ],
+  "expected": {
+    "divergenceKinds": ["STOPPAGE_END"],
+    "questionsAsked": 1,
+    "asked": "agency",
+    "moneyAtStakeCentsByKind": {
+      "STOPPAGE_END": 500000
+    }
+  }
+}

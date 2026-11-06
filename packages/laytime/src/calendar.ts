@@ -51,3 +51,32 @@ export function isWorkingMinute(t: DateTime, terms: Terms): { counts: boolean; w
   }
   return { counts: true, why: "working time" };
 }
+
+export type CheckedTime = { ok: true; t: DateTime } | { ok: false; reason: string };
+
+const FMT = "yyyy-MM-dd HH:mm";
+
+/**
+ * Like parseLogTime, but refuses a wall-clock time that does not name exactly one instant in an IANA zone:
+ * the repeated hour when clocks go back (two instants) and the skipped hour when they go forward (none).
+ * Fixed offsets such as UTC+03:00 are never ambiguous. The caller abstains and asks for the offset.
+ */
+export function parseLogTimeChecked(localTime: string, zone: string): CheckedTime {
+  const t = DateTime.fromFormat(localTime, FMT, { zone });
+  if (!t.isValid)
+    return { ok: false, reason: `cannot parse ${JSON.stringify(localTime)} in zone ${JSON.stringify(zone)}` };
+  if (t.toFormat(FMT) !== localTime)
+    return {
+      ok: false,
+      reason: `${localTime} does not exist in ${zone} (clocks go forward): give the UTC offset`,
+    };
+  for (const delta of [-3_600_000, 3_600_000]) {
+    const other = DateTime.fromMillis(t.toMillis() + delta, { zone });
+    if (other.toFormat(FMT) === localTime)
+      return {
+        ok: false,
+        reason: `${localTime} happens twice in ${zone} (clocks go back): give the UTC offset`,
+      };
+  }
+  return { ok: true, t };
+}

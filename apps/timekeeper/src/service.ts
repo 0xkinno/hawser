@@ -346,6 +346,8 @@ export class Timekeeper {
       return;
     }
     if (f.event !== "message" || this.role !== "active") return;
+    const notice = (f.data as { payload?: { body?: string } }).payload?.body ?? "";
+    if (/room document\s+[\u201c"]?log-(vessel|agency|charterer)/i.test(notice)) void this.pollTick();
     const d = f.data as {
       room_id: string;
       payload: { sender: string; sender_name: string; body: string; message_id: string; addressed: boolean };

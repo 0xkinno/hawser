@@ -1,0 +1,70 @@
+{
+  "id": "b6",
+  "question": "Kill timekeeper-a",
+  "status": "observed",
+  "summary": "timekeeper-b took the role after a median 21.9 s (min 21.4, max 25.5) over 5 SIGKILL trials; digest identical after takeover in 5 of 5; duplicate cards: 0. The server keeps a dead holder's connection, and so its role lease, until 30 s of silence (HEARTBEAT_TTL_SECONDS).",
+  "observed": {
+    "trials": [
+      {
+        "trial": 1,
+        "failoverSeconds": 25.538,
+        "digestBefore": "426F432F",
+        "digestAfterTakeover": "426F432F",
+        "digestIdentical": true,
+        "duplicateTags": [],
+        "newCardsBySecondHolder": [],
+        "holdLine": "2026-11-06T08:35:48.979Z [timekeeper-b] holds the timekeeper role",
+        "bLinesBefore": 3
+      },
+      {
+        "trial": 2,
+        "failoverSeconds": 22.594,
+        "digestBefore": "426F432F",
+        "digestAfterTakeover": "426F432F",
+        "digestIdentical": true,
+        "duplicateTags": [],
+        "newCardsBySecondHolder": [],
+        "holdLine": "2026-11-06T08:36:34.820Z [timekeeper-b] holds the timekeeper role",
+        "bLinesBefore": 3
+      },
+      {
+        "trial": 3,
+        "failoverSeconds": 21.438,
+        "digestBefore": "426F432F",
+        "digestAfterTakeover": "426F432F",
+        "digestIdentical": true,
+        "duplicateTags": [],
+        "newCardsBySecondHolder": [],
+        "holdLine": "2026-11-06T08:37:20.473Z [timekeeper-b] holds the timekeeper role",
+        "bLinesBefore": 3
+      },
+      {
+        "trial": 4,
+        "failoverSeconds": 21.886,
+        "digestBefore": "426F432F",
+        "digestAfterTakeover": "426F432F",
+        "digestIdentical": true,
+        "duplicateTags": [],
+        "newCardsBySecondHolder": [],
+        "holdLine": "2026-11-06T08:38:06.304Z [timekeeper-b] holds the timekeeper role",
+        "bLinesBefore": 3
+      },
+      {
+        "trial": 5,
+        "failoverSeconds": 21.399,
+        "digestBefore": "426F432F",
+        "digestAfterTakeover": "426F432F",
+        "digestIdentical": true,
+        "duplicateTags": [],
+        "newCardsBySecondHolder": [],
+        "holdLine": "2026-11-06T08:38:52.556Z [timekeeper-b] holds the timekeeper role",
+        "bLinesBefore": 3
+      }
+    ],
+    "medianSeconds": 21.886,
+    "allDigestsIdentical": true
+  },
+  "ranAt": "2026-11-06T08:39:05.340Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

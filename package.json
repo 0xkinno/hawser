@@ -12,20 +12,29 @@
     "setup": "bash scripts/setup.sh",
     "lint": "biome check .",
     "format": "biome check --write .",
-    "typecheck": "pnpm -r --if-present typecheck",
+    "typecheck": "pnpm -r --if-present typecheck && tsc -p tsconfig.json",
     "test": "vitest run",
     "check-copy": "node scripts/check-copy.mjs",
     "hash-competitors": "node scripts/hash-competitors.mjs",
-    "verify:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm check-copy"
+    "verify:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm check-copy",
+    "verify": "tsx scripts/verify-bundle.ts",
+    "probes": "bash probes/run-all.sh",
+    "templates": "tsx scripts/build-templates.ts",
+    "facts": "tsx scripts/facts.ts",
+    "facts:check": "tsx scripts/facts.ts --check",
+    "probes:break": "tsx probes/break-campaign.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@hawser/laytime": "workspace:*",
     "@hawser/switch-client": "workspace:*",
+    "@types/luxon": "^3.7.6",
     "@types/node": "^22.10.0",
     "esbuild": "^0.28.2",
+    "luxon": "^3.7.2",
     "tsx": "^4.23.15",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.8",
+    "yaml": "^2.9.1"
   }
 }

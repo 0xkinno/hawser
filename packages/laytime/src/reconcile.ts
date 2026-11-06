@@ -1,5 +1,5 @@
 import type { DateTime } from "luxon";
-import { parseLogTime } from "./calendar";
+import { parseLogTimeChecked } from "./calendar";
 import { computeLaytime } from "./engine";
 import type { AgreedEvent, EventKind, LogEntry, NorDecision, Party, Terms, Verdict } from "./types";
 
@@ -85,7 +85,12 @@ export function reconcile(entries: LogEntry[], terms: Terms, nor: NorDecision): 
       });
       return [];
     }
-    return [{ e, t: parseLogTime(e.localTime, e.zone) }];
+    const checked = parseLogTimeChecked(e.localTime, e.zone);
+    if (!checked.ok) {
+      abstentions.push({ party: e.party, kind: e.kind, localTime: e.localTime, reason: checked.reason });
+      return [];
+    }
+    return [{ e, t: checked.t }];
   });
   resolved.sort((a, b) => a.t.toMillis() - b.t.toMillis());
   for (const { e, t } of resolved) {

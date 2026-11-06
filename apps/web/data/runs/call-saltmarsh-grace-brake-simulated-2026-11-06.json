@@ -1,0 +1,704 @@
+{
+  "format": "hawser-run/1",
+  "callId": "call-saltmarsh-grace-brake",
+  "generatedAt": "2026-11-06T08:11:57.667Z",
+  "provenance": {
+    "mode": "simulated",
+    "label": "simulated people on a local switch-core in a cloud session",
+    "switchVersion": "0.31.0"
+  },
+  "terms": {
+    "callId": "call-saltmarsh-grace-brake",
+    "portZone": "Europe/Berlin",
+    "laytimeAllowedMin": 1440,
+    "demurrageCentsPerDay": 1250000,
+    "despatchCentsPerDay": 0,
+    "working": "SSHEX",
+    "holidays": [],
+    "norWindow": {
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "from": "08:00",
+      "to": "17:00"
+    },
+    "commencement": {
+      "kind": "next_working_day_at",
+      "at": "08:00"
+    },
+    "norRequiresArrival": true,
+    "norRequiresFreePratique": false,
+    "exceptedStoppages": [
+      "weather"
+    ],
+    "onceOnDemurrage": true,
+    "moneyQuestionThresholdCents": 25000,
+    "sourceUrl": "Fictional charter recap shaped on the public Brake facts. Not a real charter."
+  },
+  "termsSha": "8af3da3c6f64fcf7afd2261d2af7e55f143291c883d7631b9628388cb3e280e3",
+  "messages": [
+    {
+      "seq": 1,
+      "sender": "@switch-agent-4d74b066:localhost",
+      "senderName": "ship-mate",
+      "kind": "room_join",
+      "body": "ship-mate joined the room",
+      "timestamp": 1793952696883
+    },
+    {
+      "seq": 2,
+      "sender": "@switch-agent-7f273d05:localhost",
+      "senderName": "agency-clerk",
+      "kind": "room_join",
+      "body": "agency-clerk joined the room",
+      "timestamp": 1793952696906
+    },
+    {
+      "seq": 3,
+      "sender": "@switch-agent-4d74b066:localhost",
+      "senderName": "ship-mate",
+      "kind": "message",
+      "body": "Hey there! Tag @ship-mate if you need me.",
+      "timestamp": 1793952696908
+    },
+    {
+      "seq": 4,
+      "sender": "@switch-agent-7f273d05:localhost",
+      "senderName": "agency-clerk",
+      "kind": "message",
+      "body": "Hey! I'm on standby — @agency-clerk to get started.",
+      "timestamp": 1793952696937
+    },
+    {
+      "seq": 5,
+      "sender": "@switch-agent-4b76ad6f:localhost",
+      "senderName": "charter-desk",
+      "kind": "room_join",
+      "body": "charter-desk joined the room",
+      "timestamp": 1793952696940
+    },
+    {
+      "seq": 6,
+      "sender": "@switch-agent-4b76ad6f:localhost",
+      "senderName": "charter-desk",
+      "kind": "message",
+      "body": "Hello! Tag @charter-desk to loop me in.",
+      "timestamp": 1793952696966
+    },
+    {
+      "seq": 7,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "room_join",
+      "body": "timekeeper-a joined the room",
+      "timestamp": 1793952696968
+    },
+    {
+      "seq": 8,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Hi! I'm here to help — mention @timekeeper-a anytime.",
+      "timestamp": 1793952696991
+    },
+    {
+      "seq": 9,
+      "sender": "@switch-agent-dd3af13c:localhost",
+      "senderName": "timekeeper-b",
+      "kind": "room_join",
+      "body": "timekeeper-b joined the room",
+      "timestamp": 1793952696992
+    },
+    {
+      "seq": 10,
+      "sender": "@switch-agent-dd3af13c:localhost",
+      "senderName": "timekeeper-b",
+      "kind": "message",
+      "body": "Hello! I'm ready — just tag @timekeeper-b when you need me.",
+      "timestamp": 1793952697014
+    },
+    {
+      "seq": 11,
+      "sender": "@switch-agent-bba75a09:localhost",
+      "senderName": "master-sim",
+      "kind": "room_join",
+      "body": "master-sim joined the room",
+      "timestamp": 1793952697015
+    },
+    {
+      "seq": 12,
+      "sender": "@switch-agent-bba75a09:localhost",
+      "senderName": "master-sim",
+      "kind": "message",
+      "body": "Hey! Ping @master-sim and I'll jump in.",
+      "timestamp": 1793952697037
+    },
+    {
+      "seq": 13,
+      "sender": "@switch-agent-958ceab1:localhost",
+      "senderName": "agent-sim",
+      "kind": "room_join",
+      "body": "agent-sim joined the room",
+      "timestamp": 1793952697039
+    },
+    {
+      "seq": 14,
+      "sender": "@switch-agent-958ceab1:localhost",
+      "senderName": "agent-sim",
+      "kind": "message",
+      "body": "Hi! I'm here to help — mention @agent-sim anytime.",
+      "timestamp": 1793952697061
+    },
+    {
+      "seq": 15,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "room_join",
+      "body": "charterer-sim joined the room",
+      "timestamp": 1793952697067
+    },
+    {
+      "seq": 16,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "message",
+      "body": "Hey! I'm on standby — @charterer-sim to get started.",
+      "timestamp": 1793952697090
+    },
+    {
+      "seq": 17,
+      "sender": "@switch-admin:localhost",
+      "senderName": "admin",
+      "kind": "room_join",
+      "body": "admin joined the room",
+      "timestamp": 1793952697092
+    },
+    {
+      "seq": 18,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "🎭 assumed the `timekeeper` role.",
+      "timestamp": 1793952705431
+    },
+    {
+      "seq": 19,
+      "sender": "@switch-agent-4d74b066:localhost",
+      "senderName": "ship-mate",
+      "kind": "message",
+      "body": "📄 created room document “log-vessel”.",
+      "timestamp": 1793952708811
+    },
+    {
+      "seq": 20,
+      "sender": "@switch-agent-7f273d05:localhost",
+      "senderName": "agency-clerk",
+      "kind": "message",
+      "body": "📄 created room document “log-agency”.",
+      "timestamp": 1793952709069
+    },
+    {
+      "seq": 21,
+      "sender": "@switch-agent-4b76ad6f:localhost",
+      "senderName": "charter-desk",
+      "kind": "message",
+      "body": "📄 created room document “log-charterer”.",
+      "timestamp": 1793952709311
+    },
+    {
+      "seq": 22,
+      "sender": "@switch-agent-bba75a09:localhost",
+      "senderName": "master-sim",
+      "kind": "message",
+      "body": "@timekeeper enrol master",
+      "timestamp": 1793952709533
+    },
+    {
+      "seq": 23,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "log-charterer r1 sha256:6ff7e3be, 1 entry changed. 1 entry added.\n[hk:rev:log-charterer:r1:6ff7e3be]",
+      "timestamp": 1793952709635
+    },
+    {
+      "seq": 24,
+      "sender": "@switch-agent-958ceab1:localhost",
+      "senderName": "agent-sim",
+      "kind": "message",
+      "body": "@timekeeper enrol agent",
+      "timestamp": 1793952709780
+    },
+    {
+      "seq": 25,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Enrolled master-sim as master signer for this call.\n[hk:enrol:sw_0b514eda7f0f4579b61aa0a2c943a8a6]",
+      "timestamp": 1793952709883
+    },
+    {
+      "seq": 26,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "log-vessel r1 sha256:a510a54e, 5 entries changed. 5 entries added.\n[hk:rev:log-vessel:r1:a510a54e]",
+      "timestamp": 1793952709956
+    },
+    {
+      "seq": 27,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "message",
+      "body": "@timekeeper enrol charterer",
+      "timestamp": 1793952710067
+    },
+    {
+      "seq": 28,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Notice of Readiness at 2026-11-13 16:41 Europe/Berlin (15:41Z), read as valid under the stated terms. This is the engine's reading, not a legal conclusion. Recorded decision: NONE. To decide, the charterer replies: @timekeeper accept nor 72AE93F0 | accept nor without prejudice 72AE93F0 | reject nor 72AE93F0: reason\n[hk:nor:72AE93F0]",
+      "timestamp": 1793952710092
+    },
+    {
+      "seq": 29,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Enrolled agent-sim as agent signer for this call.\n[hk:enrol:sw_f9592b31a21d4e39ba805c091cb0c9c4]",
+      "timestamp": 1793952710295
+    },
+    {
+      "seq": 30,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Enrolled charterer-sim as charterer signer for this call.\n[hk:enrol:sw_2ec98e3b1fb048e2919823843433d615]",
+      "timestamp": 1793952710457
+    },
+    {
+      "seq": 31,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "log-agency r1 sha256:37c63b4d, 5 entries changed. 5 entries added.\n[hk:rev:log-agency:r1:37c63b4d]",
+      "timestamp": 1793952710948
+    },
+    {
+      "seq": 32,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "COMPLETED differs: agent 2026-11-18 10:00 Europe/Berlin (09:00Z); master 2026-11-18 10:30 Europe/Berlin (09:30Z). Spread 30 min. Money at stake under the stated terms: USD 260.41. A decision is needed.\n[hk:div:COMPLETED:be227d]",
+      "timestamp": 1793952710972
+    },
+    {
+      "seq": 33,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Question for agent: COMPLETED is logged differently (agent 2026-11-18 10:00 Europe/Berlin (09:00Z); master 2026-11-18 10:30 Europe/Berlin (09:30Z)). Which is right? Reply: @timekeeper settle COMPLETED: YYYY-MM-DD HH:MM zone\n[hk:ask:COMPLETED:be227d]",
+      "timestamp": 1793952711109
+    },
+    {
+      "seq": 34,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Statement of Facts version 1, digest 903DB8E5. 4 events, 1 on REVIEW.\nLaytime used 1440 of 1440 min. Demurrage USD 13,541.67, despatch USD 0.00.\nTimes in Europe/Berlin. To sign: @timekeeper sign 903DB8E5 (add : remarks), or refuse 903DB8E5: reason.\n[hk:sof:v1:903DB8E5]",
+      "timestamp": 1793952711228
+    },
+    {
+      "seq": 35,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "message",
+      "body": "noted",
+      "timestamp": 1793952711454
+    },
+    {
+      "seq": 36,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Recorded as received, not as accepted. Laytime does not start on this message. To decide, reply: @timekeeper accept nor 72AE93F0 | accept nor without prejudice 72AE93F0 | reject nor 72AE93F0: reason\n[hk:rna:sw_f9ef55b353184668ae54fb7ef74f84cd]",
+      "timestamp": 1793952711828
+    },
+    {
+      "seq": 37,
+      "sender": "@switch-agent-4b76ad6f:localhost",
+      "senderName": "charter-desk",
+      "kind": "message",
+      "body": "NOR accepted, laytime starts now",
+      "timestamp": 1793952712054
+    },
+    {
+      "seq": 38,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Recorded as received, not as accepted. Laytime does not start on this message. To decide, reply: @timekeeper accept nor 72AE93F0 | accept nor without prejudice 72AE93F0 | reject nor 72AE93F0: reason\n[hk:rna:sw_c3788fcae2ac46aab9819081ce825a3a]",
+      "timestamp": 1793952712526
+    },
+    {
+      "seq": 39,
+      "sender": "@switch-agent-958ceab1:localhost",
+      "senderName": "agent-sim",
+      "kind": "message",
+      "body": "@timekeeper settle COMPLETED: 2026-11-18 10:00 Europe/Berlin",
+      "timestamp": 1793952712750
+    },
+    {
+      "seq": 40,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "agent settled COMPLETED at 2026-11-18 10:00 Europe/Berlin (09:00Z).\n[hk:settle:sw_454ff08edae943a7bf7a34dd29b6f2f5]",
+      "timestamp": 1793952713624
+    },
+    {
+      "seq": 41,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Statement of Facts version 2, digest 6C70D711. 4 events, 0 on REVIEW.\nLaytime used 1440 of 1440 min. Demurrage USD 13,541.67, despatch USD 0.00.\nTimes in Europe/Berlin. To sign: @timekeeper sign 6C70D711 (add : remarks), or refuse 6C70D711: reason.\n[hk:sof:v2:6C70D711]",
+      "timestamp": 1793952713668
+    },
+    {
+      "seq": 42,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "message",
+      "body": "@timekeeper accept nor without prejudice 72AE93F0",
+      "timestamp": 1793952714077
+    },
+    {
+      "seq": 43,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Charterer decision recorded on NOR 72AE93F0: ACCEPTED_WITHOUT_PREJUDICE.\n[hk:nordec:sw_0bd3399180b64f01b5f8c3509bddd398]",
+      "timestamp": 1793952714850
+    },
+    {
+      "seq": 44,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Statement of Facts version 3, digest 7A4C2A95. 4 events, 0 on REVIEW.\nLaytime used 1440 of 1440 min. Demurrage USD 13,541.67, despatch USD 0.00.\nTimes in Europe/Berlin. To sign: @timekeeper sign 7A4C2A95 (add : remarks), or refuse 7A4C2A95: reason.\n[hk:sof:v3:7A4C2A95]",
+      "timestamp": 1793952714876
+    },
+    {
+      "seq": 45,
+      "sender": "@switch-agent-4b76ad6f:localhost",
+      "senderName": "charter-desk",
+      "kind": "message",
+      "body": "@timekeeper sign 7A4C2A95",
+      "timestamp": 1793952715164
+    },
+    {
+      "seq": 46,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Refused: charter-desk is not an enrolled signer. Enrol first with @timekeeper enrol master|agent|charterer. Nothing recorded.\n[hk:reply:sw_369b12892939489db0e8cf944c3157ca]",
+      "timestamp": 1793952715354
+    },
+    {
+      "seq": 47,
+      "sender": "@switch-agent-bba75a09:localhost",
+      "senderName": "master-sim",
+      "kind": "message",
+      "body": "@timekeeper sign 7A4C2A95",
+      "timestamp": 1793952715646
+    },
+    {
+      "seq": 48,
+      "sender": "@switch-agent-958ceab1:localhost",
+      "senderName": "agent-sim",
+      "kind": "message",
+      "body": "@timekeeper sign 7A4C2A95: tally agreed",
+      "timestamp": 1793952715822
+    },
+    {
+      "seq": 49,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "master signed version 3 (7A4C2A95). 1 of 3 signatures.\n[hk:sign:sw_d04e3479d0684d028e0c26f4bd2ce8a1]",
+      "timestamp": 1793952715914
+    },
+    {
+      "seq": 50,
+      "sender": "@switch-agent-04149dd7:localhost",
+      "senderName": "charterer-sim",
+      "kind": "message",
+      "body": "@timekeeper sign 7A4C2A95",
+      "timestamp": 1793952716120
+    },
+    {
+      "seq": 51,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "agent signed version 3 (7A4C2A95) with remarks: tally agreed. 2 of 3 signatures.\n[hk:sign:sw_71d26f4c7d7b478ba492f87e76de2fcd]",
+      "timestamp": 1793952716344
+    },
+    {
+      "seq": 52,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "charterer signed version 3 (7A4C2A95). 3 of 3 signatures.\n[hk:sign:sw_bb6849b2bd0d4c3592556c93a95a8057]",
+      "timestamp": 1793952716661
+    },
+    {
+      "seq": 53,
+      "sender": "@switch-agent-994c7e7e:localhost",
+      "senderName": "timekeeper-a",
+      "kind": "message",
+      "body": "Port call closed: version 3, digest 7A4C2A95, three signatures.\n[hk:closed:7A4C2A95]",
+      "timestamp": 1793952716709
+    }
+  ],
+  "docs": [
+    {
+      "party": "charterer",
+      "revision": 1,
+      "sha": "6ff7e3bea5306584fc796dd493eb795c2580231fc37421ca8b17543f06a71565",
+      "content": "HAWSER LOG v1 | party=charterer | call=call-saltmarsh-grace-brake"
+    },
+    {
+      "party": "vessel",
+      "revision": 1,
+      "sha": "a510a54e3b017061f2c0f0b464ee72e1f99ba07596c30c81c38972658b33d871",
+      "content": "HAWSER LOG v1 | party=vessel | call=call-saltmarsh-grace-brake\n{\"seq\":1,\"kind\":\"ANCHORED\",\"localTime\":\"2026-11-13 14:00\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"vessel:1\"},\"enteredBy\":\"vessel-agent\"}\n{\"seq\":2,\"kind\":\"NOR_TENDERED\",\"localTime\":\"2026-11-13 16:41\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"vessel:2\"},\"enteredBy\":\"vessel-agent\"}\n{\"seq\":3,\"kind\":\"ALL_FAST\",\"localTime\":\"2026-11-16 09:12\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"vessel:3\"},\"enteredBy\":\"vessel-agent\"}\n{\"seq\":4,\"kind\":\"COMPLETED\",\"localTime\":\"2026-11-18 10:30\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"vessel:4\"},\"enteredBy\":\"vessel-agent\"}"
+    },
+    {
+      "party": "agency",
+      "revision": 1,
+      "sha": "37c63b4dea373874b02550682043aab301ef84f1399b4609d2472e9495c57aad",
+      "content": "HAWSER LOG v1 | party=agency | call=call-saltmarsh-grace-brake\n{\"seq\":1,\"kind\":\"ANCHORED\",\"localTime\":\"2026-11-13 14:00\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"agency:1\"},\"enteredBy\":\"agency-agent\"}\n{\"seq\":2,\"kind\":\"NOR_TENDERED\",\"localTime\":\"2026-11-13 16:41\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"agency:2\"},\"enteredBy\":\"agency-agent\"}\n{\"seq\":3,\"kind\":\"ALL_FAST\",\"localTime\":\"2026-11-16 09:12\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"agency:3\"},\"enteredBy\":\"agency-agent\"}\n{\"seq\":4,\"kind\":\"COMPLETED\",\"localTime\":\"2026-11-18 10:00\",\"zone\":\"Europe/Berlin\",\"source\":{\"type\":\"message\",\"ref\":\"agency:4\"},\"enteredBy\":\"agency-agent\"}"
+    }
+  ],
+  "sofVersions": [
+    {
+      "version": 1,
+      "digest": "903DB8E5",
+      "body": {
+        "callId": "call-saltmarsh-grace-brake",
+        "termsSha": "8af3da3c6f64fcf7afd2261d2af7e55f143291c883d7631b9628388cb3e280e3",
+        "events": [
+          {
+            "kind": "ANCHORED",
+            "utc": "2026-11-13T13:00:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:1",
+              "vessel:1"
+            ]
+          },
+          {
+            "kind": "NOR_TENDERED",
+            "utc": "2026-11-13T15:41:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:2",
+              "vessel:2"
+            ]
+          },
+          {
+            "kind": "ALL_FAST",
+            "utc": "2026-11-16T08:12:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:3",
+              "vessel:3"
+            ]
+          },
+          {
+            "kind": "COMPLETED",
+            "utc": "2026-11-18T09:00:00Z",
+            "reason": null,
+            "verdict": "REVIEW",
+            "sources": [
+              "agency:4",
+              "vessel:4"
+            ]
+          }
+        ],
+        "remarks": [
+          {
+            "norDecision": "NONE",
+            "by": null
+          }
+        ],
+        "sourceFingerprints": {
+          "log-vessel": "a510a54e3b017061f2c0f0b464ee72e1f99ba07596c30c81c38972658b33d871",
+          "log-agency": "37c63b4dea373874b02550682043aab301ef84f1399b4609d2472e9495c57aad",
+          "log-charterer": "6ff7e3bea5306584fc796dd493eb795c2580231fc37421ca8b17543f06a71565"
+        }
+      },
+      "norDecision": "NONE"
+    },
+    {
+      "version": 2,
+      "digest": "6C70D711",
+      "body": {
+        "callId": "call-saltmarsh-grace-brake",
+        "termsSha": "8af3da3c6f64fcf7afd2261d2af7e55f143291c883d7631b9628388cb3e280e3",
+        "events": [
+          {
+            "kind": "ANCHORED",
+            "utc": "2026-11-13T13:00:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:1",
+              "vessel:1"
+            ]
+          },
+          {
+            "kind": "NOR_TENDERED",
+            "utc": "2026-11-13T15:41:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:2",
+              "vessel:2"
+            ]
+          },
+          {
+            "kind": "ALL_FAST",
+            "utc": "2026-11-16T08:12:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:3",
+              "vessel:3"
+            ]
+          },
+          {
+            "kind": "COMPLETED",
+            "utc": "2026-11-18T09:00:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:4",
+              "settled:agent",
+              "vessel:4"
+            ]
+          }
+        ],
+        "remarks": [
+          {
+            "norDecision": "NONE",
+            "by": null
+          }
+        ],
+        "sourceFingerprints": {
+          "log-vessel": "a510a54e3b017061f2c0f0b464ee72e1f99ba07596c30c81c38972658b33d871",
+          "log-agency": "37c63b4dea373874b02550682043aab301ef84f1399b4609d2472e9495c57aad",
+          "log-charterer": "6ff7e3bea5306584fc796dd493eb795c2580231fc37421ca8b17543f06a71565"
+        }
+      },
+      "norDecision": "NONE"
+    },
+    {
+      "version": 3,
+      "digest": "7A4C2A95",
+      "body": {
+        "callId": "call-saltmarsh-grace-brake",
+        "termsSha": "8af3da3c6f64fcf7afd2261d2af7e55f143291c883d7631b9628388cb3e280e3",
+        "events": [
+          {
+            "kind": "ANCHORED",
+            "utc": "2026-11-13T13:00:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:1",
+              "vessel:1"
+            ]
+          },
+          {
+            "kind": "NOR_TENDERED",
+            "utc": "2026-11-13T15:41:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:2",
+              "vessel:2"
+            ]
+          },
+          {
+            "kind": "ALL_FAST",
+            "utc": "2026-11-16T08:12:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:3",
+              "vessel:3"
+            ]
+          },
+          {
+            "kind": "COMPLETED",
+            "utc": "2026-11-18T09:00:00Z",
+            "reason": null,
+            "verdict": "OBSERVED",
+            "sources": [
+              "agency:4",
+              "settled:agent",
+              "vessel:4"
+            ]
+          }
+        ],
+        "remarks": [
+          {
+            "norDecision": "ACCEPTED_WITHOUT_PREJUDICE",
+            "by": "@switch-agent-04149dd7:localhost"
+          }
+        ],
+        "sourceFingerprints": {
+          "log-vessel": "a510a54e3b017061f2c0f0b464ee72e1f99ba07596c30c81c38972658b33d871",
+          "log-agency": "37c63b4dea373874b02550682043aab301ef84f1399b4609d2472e9495c57aad",
+          "log-charterer": "6ff7e3bea5306584fc796dd493eb795c2580231fc37421ca8b17543f06a71565"
+        }
+      },
+      "norDecision": "ACCEPTED_WITHOUT_PREJUDICE"
+    }
+  ],
+  "signatures": [
+    {
+      "party": "vessel",
+      "sender": "@switch-agent-bba75a09:localhost",
+      "digest": "7A4C2A95"
+    },
+    {
+      "party": "agency",
+      "sender": "@switch-agent-958ceab1:localhost",
+      "digest": "7A4C2A95",
+      "remarks": "tally agreed"
+    },
+    {
+      "party": "charterer",
+      "sender": "@switch-agent-04149dd7:localhost",
+      "digest": "7A4C2A95"
+    }
+  ],
+  "finalDigest": "7A4C2A95",
+  "engine": {
+    "demurrageCents": 1354167,
+    "despatchCents": 0,
+    "usedMin": 1440,
+    "status": "COUNTED"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "p04",
+  "question": "Agent A rewrites its own document. Is any event emitted to the room or to other agents? Is any prior version retrievable?",
+  "status": "observed",
+  "summary": "Switch posts a one-line notice to the room when a document is updated: \"📄 updated room document “log-agency”.\" from \"agency-clerk\". It names the document but not what changed. list_references fields: id, name, description, instructions, scope, created_by_agent_id. load_internal_documents fields: room_seq, source_event_id, id, name, description, content. Only the current content is returned and no revision field exists, so the earlier content is not retrievable (prior text visible: false).",
+  "observed": {
+    "newFramesAfterRewrite": [
+      "message"
+    ],
+    "updateNotice": {
+      "sender": "@switch-agent-7f273d05:localhost",
+      "name": "agency-clerk",
+      "body": "📄 updated room document “log-agency”.",
+      "id": "sw_9dc101b5e0884994a539472b7b7c7d42"
+    },
+    "listReferencesFields": [
+      "id",
+      "name",
+      "description",
+      "instructions",
+      "scope",
+      "created_by_agent_id"
+    ],
+    "loadInternalDocumentsFields": [
+      "room_seq",
+      "source_event_id",
+      "id",
+      "name",
+      "description",
+      "content"
+    ],
+    "priorVersionRetrievable": false,
+    "roomHistoryAfterRewrite": [
+      "ship-mate joined the room",
+      "agency-clerk joined the room",
+      "Hi! I'm here to help — mention @ship-mate anytime.",
+      "Hey! Ping @agency-clerk and I'll jump in.",
+      "charter-desk joined the room",
+      "Hi there! Just @charter-desk me when you're ready.",
+      "timekeeper-a joined the room",
+      "timekeeper-b joined the room",
+      "Hey! I'm on standby — @timekeeper-a to get started.",
+      "master-sim joined the room",
+      "Hey! Ping @timekeeper-b and I'll jump in.",
+      "agent-sim joined the room",
+      "Hi! Mention @master-sim to get my attention.",
+      "charterer-sim joined the room",
+      "Hello! Tag @agent-sim to loop me in.",
+      "admin joined the room",
+      "Hi there! Just @charterer-sim me when you're ready.",
+      "📄 created room document “log-agency”.",
+      "📄 updated room document “log-agency”."
+    ]
+  },
+  "ranAt": "2026-11-06T08:16:46.373Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

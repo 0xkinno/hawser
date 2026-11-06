@@ -1,0 +1,14 @@
+{
+  "id": "b9",
+  "question": "Master logs 16:41 without zone",
+  "status": "observed",
+  "summary": "Abstention question posted once (1), the time was not placed (NOR card posted: false). Text: \"Question for master: your NOR_TENDERED at 2026-11-13 16:41 has no time zone, so it is not placed. Is that ship's time with its UTC offset, or port local time (Europe/Berlin)? Correct the line in your log with the zone.\".",
+  "observed": {
+    "question": "Question for master: your NOR_TENDERED at 2026-11-13 16:41 has no time zone, so it is not placed. Is that ship's time with its UTC offset, or port local time (Europe/Berlin)? Correct the line in your log with the zone.\n[hk:ask:abstain:vessel:NOR_TENDERED:2026-11-13 16:41]",
+    "askedTimes": 1,
+    "norCardPosted": false
+  },
+  "ranAt": "2026-11-06T08:40:02.793Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}

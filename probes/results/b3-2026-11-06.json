@@ -1,0 +1,18 @@
+{
+  "id": "b3",
+  "question": "ship-mate edits log-charterer",
+  "status": "observed",
+  "summary": "Switch refused: {\"refused\":true,\"status\":403,\"body\":\"{\\\"detail\\\":\\\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document cec7a481-e3a4-4f46-b188-e41464916db9\\\"}\"}. Content unchanged: true. Revision cards for log-charterer: 1 (no change seen by the Timekeeper).",
+  "observed": {
+    "outcome": {
+      "refused": true,
+      "status": 403,
+      "body": "{\"detail\":\"Agent 0fd3c13a-28a2-4e0a-9c64-493e29cf7e77 did not create document cec7a481-e3a4-4f46-b188-e41464916db9\"}"
+    },
+    "contentUnchanged": true,
+    "charterRevisionCards": 1
+  },
+  "ranAt": "2026-11-06T08:31:51.793Z",
+  "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
+  "switchVersion": "0.31.0"
+}
