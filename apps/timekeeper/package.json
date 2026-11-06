@@ -1,0 +1,24 @@
+{
+  "name": "@hawser/timekeeper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/main.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "esbuild src/main.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/main.js --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@hawser/laytime": "workspace:*",
+    "@hawser/switch-client": "workspace:*",
+    "luxon": "^3.7.2",
+    "pdf-lib": "^1.17.1",
+    "ws": "^8.18.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.7.6",
+    "@types/ws": "^8.5.13"
+  }
+}
