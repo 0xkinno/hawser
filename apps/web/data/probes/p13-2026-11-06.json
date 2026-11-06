@@ -10,7 +10,9 @@
     },
     "doc": "reference/switch/docs/TEMPLATES.md, section Version 2"
   },
-  "caveats": ["Not claimed anywhere until it is run on a server with agent management."],
+  "caveats": [
+    "Not claimed anywhere until it is run on a server with agent management."
+  ],
   "ranAt": "2026-11-06T08:17:41.917Z",
   "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
   "switchVersion": "0.31.0"

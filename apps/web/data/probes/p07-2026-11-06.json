@@ -18,7 +18,9 @@
           "scope": "all",
           "filter": "all",
           "spawn_capable": false,
-          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "rooms": [
+            "5ec14362-b20f-4701-b279-786d57aa6e0a"
+          ],
           "cursor": 0,
           "position": {
             "s": 4294967323,
@@ -75,7 +77,9 @@
             "version": null
           }
         },
-        "framesAfter": ["message"]
+        "framesAfter": [
+          "message"
+        ]
       },
       "resumeWithOldCursorNoGeneration": {
         "opened": true,
@@ -87,7 +91,9 @@
           "scope": "all",
           "filter": "all",
           "spawn_capable": false,
-          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "rooms": [
+            "5ec14362-b20f-4701-b279-786d57aa6e0a"
+          ],
           "cursor": 0,
           "position": {
             "s": 4294967323,
@@ -144,7 +150,9 @@
             "version": null
           }
         },
-        "framesAfter": ["message"]
+        "framesAfter": [
+          "message"
+        ]
       },
       "openAtHead": {
         "opened": true,
@@ -156,7 +164,9 @@
           "scope": "all",
           "filter": "all",
           "spawn_capable": false,
-          "rooms": ["5ec14362-b20f-4701-b279-786d57aa6e0a"],
+          "rooms": [
+            "5ec14362-b20f-4701-b279-786d57aa6e0a"
+          ],
           "cursor": 0,
           "position": {
             "s": 4294967323,

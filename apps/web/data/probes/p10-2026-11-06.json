@@ -4,7 +4,13 @@
   "status": "partial",
   "summary": "list_participants fields: id, name, type, status, alias. Message events carry sender \"@switch-agent-bba75a09:localhost\" and sender_name \"master-sim\". The participant list id is an agent uuid, not the @ sender id, and carries no linked user. Binding therefore uses the @ sender id learned at enrolment, or an explicit name entry.",
   "observed": {
-    "listParticipantsFields": ["id", "name", "type", "status", "alias"],
+    "listParticipantsFields": [
+      "id",
+      "name",
+      "type",
+      "status",
+      "alias"
+    ],
     "sample": {
       "id": "0fd3c13a-28a2-4e0a-9c64-493e29cf7e77",
       "name": "ship-mate",

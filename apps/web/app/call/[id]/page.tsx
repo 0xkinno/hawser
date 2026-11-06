@@ -152,9 +152,9 @@ export default async function Call({ params }: { params: Promise<{ id: string }>
                     <text
                       className="tick"
                       x={x(e)}
-                      y={36 + row * 60 - (i % 2) * 0}
+                      y={36 + row * 60 - (i % 2) * 15}
                       textAnchor="middle"
-                      transform={`rotate(-18 ${x(e)} ${36 + row * 60})`}
+                      transform={`rotate(-18 ${x(e)} ${36 + row * 60 - (i % 2) * 15})`}
                     >
                       {e.kind.replace("_TENDERED", "").replace("_", " ")}
                     </text>
@@ -261,7 +261,7 @@ export default async function Call({ params }: { params: Promise<{ id: string }>
 
       <GlowCard data-tour="sof" style={{ marginTop: 18 }}>
         <div className="label">Statement of Facts, version {last?.version}</div>
-        <div className="scroll-x">
+        <div className="scroll-x" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="t">
             <thead>
               <tr>

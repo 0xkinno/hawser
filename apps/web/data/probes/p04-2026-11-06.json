@@ -4,15 +4,31 @@
   "status": "observed",
   "summary": "Switch posts a one-line notice to the room when a document is updated: \"📄 updated room document “log-agency”.\" from \"agency-clerk\". It names the document but not what changed. list_references fields: id, name, description, instructions, scope, created_by_agent_id. load_internal_documents fields: room_seq, source_event_id, id, name, description, content. Only the current content is returned and no revision field exists, so the earlier content is not retrievable (prior text visible: false).",
   "observed": {
-    "newFramesAfterRewrite": ["message"],
+    "newFramesAfterRewrite": [
+      "message"
+    ],
     "updateNotice": {
       "sender": "@switch-agent-7f273d05:localhost",
       "name": "agency-clerk",
       "body": "📄 updated room document “log-agency”.",
       "id": "sw_9dc101b5e0884994a539472b7b7c7d42"
     },
-    "listReferencesFields": ["id", "name", "description", "instructions", "scope", "created_by_agent_id"],
-    "loadInternalDocumentsFields": ["room_seq", "source_event_id", "id", "name", "description", "content"],
+    "listReferencesFields": [
+      "id",
+      "name",
+      "description",
+      "instructions",
+      "scope",
+      "created_by_agent_id"
+    ],
+    "loadInternalDocumentsFields": [
+      "room_seq",
+      "source_event_id",
+      "id",
+      "name",
+      "description",
+      "content"
+    ],
     "priorVersionRetrievable": false,
     "roomHistoryAfterRewrite": [
       "ship-mate joined the room",

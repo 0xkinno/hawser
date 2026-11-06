@@ -22,7 +22,13 @@ export default function Findings() {
         Run on switch-core {f.switch_core_version} on {f.run_date}. {f.environment} A row marked "not run
         here" needs the real Codespace server or a real messaging app.
       </div>
-      <div className="scroll-x" style={{ marginTop: 24 }}>
+      <div
+        className="scroll-x"
+        tabIndex={0}
+        role="region"
+        aria-label="Scrollable table"
+        style={{ marginTop: 24 }}
+      >
         <table className="t" data-qa="probe-table">
           <thead>
             <tr>

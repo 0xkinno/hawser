@@ -1,0 +1,26 @@
+name: E2E viewports
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  viewports:
+    name: six viewports, axe, console
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @hawser/web build
+      - run: pnpm --filter @hawser/web exec playwright install --with-deps chromium
+      - run: pnpm --filter @hawser/web exec playwright test --trace off
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screens
+          path: docs/screens

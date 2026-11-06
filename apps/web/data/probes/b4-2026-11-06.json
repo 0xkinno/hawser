@@ -53,7 +53,9 @@
     ],
     "medianDetectSeconds": 2.159
   },
-  "caveats": ["Simulated people on a local switch-core."],
+  "caveats": [
+    "Simulated people on a local switch-core."
+  ],
   "ranAt": "2026-11-06T08:45:46.055Z",
   "environment": "switch-core started from the cloned repository with a local Postgres, no Docker, in a Claude Code cloud session. Not the Codespace server.",
   "switchVersion": "0.31.0"

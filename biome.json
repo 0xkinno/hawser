@@ -10,7 +10,11 @@
       "runs",
       "probes/results",
       "pnpm-lock.yaml",
-      "coverage"
+      "coverage",
+      "apps/web/data",
+      "apps/web/public/data",
+      "apps/web/.next",
+      "docs/FACTS.json"
     ]
   },
   "organizeImports": {

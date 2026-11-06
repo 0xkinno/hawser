@@ -10,6 +10,10 @@ const here = dirname(fileURLToPath(import.meta.url));
 const app = resolve(here, "..");
 const root = resolve(app, "../..");
 const check = process.argv.includes("--check");
+if (!existsSync(join(root, "docs/FACTS.json"))) {
+  console.log("repository root not available here, using the committed copies in apps/web/data");
+  process.exit(0);
+}
 
 const plan: Array<{ from: string; to: string }> = [];
 const add = (from: string, to: string) => plan.push({ from, to });

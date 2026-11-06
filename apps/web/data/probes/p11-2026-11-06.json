@@ -4,7 +4,10 @@
   "status": "observed",
   "summary": "One connection covered 2 rooms. POST /message succeeded for both rooms. The desk watcher saw the desk post: true. The bridge watcher saw the bridge post: true. Note: a scope=all connection receives every room it belongs to, each event tagged with its room_id.",
   "observed": {
-    "coveredRooms": ["4ba23522-cd6b-4784-bcb1-0cfdf179125e", "b90f0336-fa68-4610-94ff-0af97759401f"],
+    "coveredRooms": [
+      "4ba23522-cd6b-4784-bcb1-0cfdf179125e",
+      "b90f0336-fa68-4610-94ff-0af97759401f"
+    ],
     "deskPost": {
       "ok": true,
       "event_id": "sw_eabc642d1df0486a955b4c8aedd7efb5"

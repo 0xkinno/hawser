@@ -12,7 +12,9 @@
       "scope": "all",
       "filter": "all",
       "spawn_capable": false,
-      "rooms": ["9c58bdbd-90c1-48ec-a50c-9dce37a112d7"],
+      "rooms": [
+        "9c58bdbd-90c1-48ec-a50c-9dce37a112d7"
+      ],
       "cursor": 4294967404,
       "position": {
         "s": 4294967404,
@@ -90,7 +92,10 @@
       }
     },
     "heartbeatIntervalSeconds": 10,
-    "pingGapsSeconds": [10, 10.001],
+    "pingGapsSeconds": [
+      10,
+      10.001
+    ],
     "pingsSeen": 3,
     "openAfterPongs": true
   },

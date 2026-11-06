@@ -56,7 +56,7 @@ pnpm facts:check`}</pre>
       <h2 className="display" style={{ fontSize: 32, marginTop: 40 }}>
         What is live, recorded and simulated
       </h2>
-      <div className="scroll-x">
+      <div className="scroll-x" tabIndex={0} role="region" aria-label="Scrollable table">
         <table className="t">
           <thead>
             <tr>

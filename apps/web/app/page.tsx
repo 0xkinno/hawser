@@ -49,7 +49,7 @@ export default function Landing() {
                 </Link>
               )}
             </div>
-            <Link href="/judge" className="boarding" aria-label="Judge walk, sixty seconds">
+            <Link href="/judge" className="boarding">
               <BoardingQr aria-hidden="true" />
               <span>
                 <strong>Boarding pass for judges</strong>
@@ -107,7 +107,7 @@ export default function Landing() {
             holds one exclusive role.
           </p>
           <GlowCard style={{ marginTop: 28, padding: 12 }}>
-            <RoomDiagram width="100%" height="auto" />
+            <RoomDiagram width="100%" style={{ height: "auto" }} />
           </GlowCard>
           <div className="grid3" style={{ marginTop: 18 }}>
             <GlowCard>
@@ -249,7 +249,7 @@ export default function Landing() {
             </p>
           </div>
           <GlowCard style={{ transform: "rotate(-2deg)" }}>
-            <SofCard width="100%" height="auto" />
+            <SofCard width="100%" style={{ height: "auto" }} />
           </GlowCard>
         </div>
       </section>

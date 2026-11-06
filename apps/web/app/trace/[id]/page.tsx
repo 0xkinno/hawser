@@ -23,7 +23,7 @@ export default async function Trace({ params }: { params: Promise<{ id: string }
         {b.provenance.mode === "simulated" ? "Simulated people." : ""}{" "}
         <Link href={`/call/${id}`}>Back to the call</Link>
       </p>
-      <div className="scroll-x">
+      <div className="scroll-x" tabIndex={0} role="region" aria-label="Scrollable table">
         <table className="t" data-qa="trace-table">
           <thead>
             <tr>

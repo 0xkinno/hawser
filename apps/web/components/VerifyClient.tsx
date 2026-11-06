@@ -74,7 +74,7 @@ export function VerifyClient({ items }: { items: Item[] }) {
           ) : (
             <p>First mismatch: {result.r.firstMismatch}</p>
           )}
-          <div className="scroll-x">
+          <div className="scroll-x" tabIndex={0} role="region" aria-label="Scrollable table">
             <table className="t">
               <thead>
                 <tr>

@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   check:
-    name: lint, typecheck, test, copy check
+    name: lint, typecheck, test, copy check, facts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,3 +20,11 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm check-copy
+      - name: facts are generated from the evidence in the repository
+        run: pnpm facts:check
+      - name: the site's data copies match the evidence
+        run: pnpm --filter @hawser/web sync:check
+      - name: every committed run bundle recomputes offline
+        run: for f in runs/*.json; do pnpm verify "$f"; done
+      - name: the web app builds
+        run: pnpm --filter @hawser/web build
