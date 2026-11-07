@@ -265,8 +265,9 @@ export class Timekeeper {
     body: string,
     messageId: string,
     addressed: boolean,
+    room: "desk" | "bridge" = "desk",
   ): IncomingMessage {
-    return { sender, senderName, body, messageId, addressed, room: "desk" };
+    return { sender, senderName, body, messageId, addressed, room };
   }
 
   // -------------------------------------------------------------------- docs
@@ -352,10 +353,11 @@ export class Timekeeper {
       room_id: string;
       payload: { sender: string; sender_name: string; body: string; message_id: string; addressed: boolean };
     };
-    if (d.room_id !== this.o.deskRoomId) return;
+    const room = d.room_id === this.o.deskRoomId ? "desk" : d.room_id === this.o.bridgeRoomId ? "bridge" : null;
+    if (!room) return;
     const p = d.payload;
     await this.exec(
-      this.call.onMessage(this.incoming(p.sender, p.sender_name, p.body, p.message_id, p.addressed)),
+      this.call.onMessage(this.incoming(p.sender, p.sender_name, p.body, p.message_id, p.addressed, room)),
     );
   }
 
