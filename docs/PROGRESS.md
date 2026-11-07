@@ -51,3 +51,7 @@ What ran, in order, with the obstacles that cost time:
 8. Timekeepers registered with `scripts/live-setup.ts`, added to both rooms, addressing open to the desk room; A holds the role, B stands by.
 
 Cast of the live call: Sean (master, Telegram), Eberebaby (port agent, Slack), Kingsley (charterer's manager, Slack). Track 3: sandbox-quantum/switch#1672 open, CLA signed, three maintainer-gated checks waiting.
+
+## Live call, 7 November 2026, 11:30 to 11:50 WAT
+
+Observed on the Codespace server: three enrolments by real people (Kingsley and Eberebaby in Slack, Sean in Telegram), acknowledged by timekeeper-a; one refusal first, because Switch identifies people by username (`eberebabyujustika`, `bibiUju101`), not display name, so the signer list was corrected; a Timekeeper clock card; Sean's deck log photo and Eberebaby's quay times posted. Two fixes pushed during the call: the Timekeeper now acts on commands in the bridge room, and the signer list uses usernames. Not observed: the company agents writing the posted times into their logs, so no version, digest or signatures happened live. The Codespace restarted once mid-call; `hawser-ensure.sh` brought everything back. Screenshots: `demo-footage/chat-captures/11` to `15`.
