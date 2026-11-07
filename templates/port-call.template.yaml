@@ -22,8 +22,8 @@ params:
     default:
       - opencode
       - claude
-  machine:
-    type: machine
+  location:
+    type: location
     default:
       - $first
     input: advanced
@@ -38,7 +38,7 @@ resources:
     display_name: Agency clerk
     description: Keeps the port agency's log for this call.
     provider: "{provider}"
-    machine: "{machine}"
+    location: "{location}"
     directory: "{$agents_dir}/agency-clerk"
     auto_mode: true
     auto_approve: false

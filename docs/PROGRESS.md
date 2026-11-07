@@ -20,6 +20,8 @@ Later the same day: GitHub CLI installed under `C:\Users\hp\tools\gh` and signed
 
 Evening of 6 November: Slack workspace and desk channel created by the builder, Telegram bot created, SSH alias for the Codespace working, Switch Console v0.40.1 installer downloaded from the official release. Tokens stay in the gitignored `.env` or in Console only.
 
+7 November: Switch Console on Windows cannot run agents locally (its source says SDK sessions need a POSIX SSH host), so the server and agents run on the Codespace through an SSH port forward kept alive by `keep-forward.ps1`. The templates used a `machine` param, which Console offers only on servers with agent management; they now use a `location` param, which lists SSH hosts.
+
 Still needs the builder: Codespace (the `gh` CLI was not installed on this machine), Slack and Telegram, the real call, video, form.
 
 Next: `docs/HANDOFF.md` section 3.

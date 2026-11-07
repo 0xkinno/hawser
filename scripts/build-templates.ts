@@ -49,7 +49,7 @@ export const templates: Record<string, unknown> = {
         description: "Agent provider for the agency clerk",
         default: ["opencode", "claude"],
       },
-      machine: { type: "machine", default: ["$first"], input: "advanced" },
+      location: { type: "location", default: ["$first"], input: "advanced" },
       terms: {
         type: "string",
         multiline: true,
@@ -63,7 +63,7 @@ export const templates: Record<string, unknown> = {
         display_name: "Agency clerk",
         description: "Keeps the port agency's log for this call.",
         provider: "{provider}",
-        machine: "{machine}",
+        location: "{location}",
         directory: "{$agents_dir}/agency-clerk",
         auto_mode: true,
         auto_approve: false,
@@ -102,7 +102,7 @@ export const templates: Record<string, unknown> = {
       vessel: { type: "string", pattern: "^[a-z0-9-]+$", default: "saltmarsh-grace" },
       port: { type: "string", pattern: "^[a-z0-9-]+$", default: "brake" },
       provider: { type: "provider", default: ["claude"] },
-      machine: { type: "machine", default: ["$first"], input: "advanced" },
+      location: { type: "location", default: ["$first"], input: "advanced" },
     },
     resources: {
       mate: {
@@ -111,7 +111,7 @@ export const templates: Record<string, unknown> = {
         display_name: "Ship mate",
         description: "Keeps the shipowner's vessel log. Reads the master's photos.",
         provider: "{provider}",
-        machine: "{machine}",
+        location: "{location}",
         directory: "{$agents_dir}/ship-mate",
         auto_mode: true,
         auto_approve: false,
@@ -127,7 +127,7 @@ export const templates: Record<string, unknown> = {
       vessel: { type: "string", pattern: "^[a-z0-9-]+$", default: "saltmarsh-grace" },
       port: { type: "string", pattern: "^[a-z0-9-]+$", default: "brake" },
       provider: { type: "provider", default: ["opencode", "claude"] },
-      machine: { type: "machine", default: ["$first"], input: "advanced" },
+      location: { type: "location", default: ["$first"], input: "advanced" },
     },
     resources: {
       desk: {
@@ -136,7 +136,7 @@ export const templates: Record<string, unknown> = {
         display_name: "Charter desk",
         description: "Keeps the charterer's log. Cannot accept a Notice of Readiness.",
         provider: "{provider}",
-        machine: "{machine}",
+        location: "{location}",
         directory: "{$agents_dir}/charter-desk",
         auto_mode: true,
         auto_approve: false,

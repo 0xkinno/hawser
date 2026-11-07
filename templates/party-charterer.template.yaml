@@ -14,8 +14,8 @@ params:
     default:
       - opencode
       - claude
-  machine:
-    type: machine
+  location:
+    type: location
     default:
       - $first
     input: advanced
@@ -26,7 +26,7 @@ resources:
     display_name: Charter desk
     description: Keeps the charterer's log. Cannot accept a Notice of Readiness.
     provider: "{provider}"
-    machine: "{machine}"
+    location: "{location}"
     directory: "{$agents_dir}/charter-desk"
     auto_mode: true
     auto_approve: false

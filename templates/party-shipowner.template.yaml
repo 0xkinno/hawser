@@ -13,8 +13,8 @@ params:
     type: provider
     default:
       - claude
-  machine:
-    type: machine
+  location:
+    type: location
     default:
       - $first
     input: advanced
@@ -25,7 +25,7 @@ resources:
     display_name: Ship mate
     description: Keeps the shipowner's vessel log. Reads the master's photos.
     provider: "{provider}"
-    machine: "{machine}"
+    location: "{location}"
     directory: "{$agents_dir}/ship-mate"
     auto_mode: true
     auto_approve: false
