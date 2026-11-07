@@ -54,6 +54,49 @@ pnpm facts:check`}</pre>
         </GlowCard>
       </div>
       <h2 className="display" style={{ fontSize: 32, marginTop: 40 }}>
+        Live on a real server, 7 November 2026
+      </h2>
+      <p className="muted" style={{ maxWidth: 760 }}>
+        Switch Console on a Windows laptop drives a switch-core 0.31.0 server in a GitHub Codespace. Slack and
+        Telegram are connected as bridges. The three company agents run Claude Code on the Codespace through
+        an enrolled agents controller, and both Timekeepers hold and stand by for the exclusive role. These
+        are screenshots of that setup.
+      </p>
+      <div className="grid2 live-shots" style={{ marginTop: 18 }}>
+        {(
+          [
+            [
+              "slack-desk",
+              1400,
+              656,
+              "Slack desk room: agency-clerk, charter-desk and ship-mate join and greet",
+            ],
+            ["telegram-bridge", 810, 870, "Telegram bridge room: ship-mate added for the master"],
+            [
+              "gateway-agents",
+              1400,
+              656,
+              "Switch Gateway: three managed Claude Code agents running on the Codespace",
+            ],
+            ["console-home", 1400, 788, "Switch Console: Slack and Telegram connected, accounts linked"],
+          ] as const
+        ).map(([src, w, h, alt]) => (
+          <figure key={src} className="live-shot">
+            <img src={`/live/${src}.webp`} alt={alt} width={w} height={h} />
+            <figcaption className="cap">{alt}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <GlowCard>
+        <div className="label">Track 3, Best Core Contribution</div>
+        <p style={{ marginTop: 8 }}>
+          <a href="https://github.com/sandbox-quantum/switch/pull/1672">sandbox-quantum/switch#1672</a> adds
+          SMS through Twilio as a Switch messaging platform (issue #796): signed webhooks, an allow-list in
+          both directions, bounded replies and 99 new tests. It is open, the CLA is signed, and it is not
+          merged.
+        </p>
+      </GlowCard>
+      <h2 className="display" style={{ fontSize: 32, marginTop: 40 }}>
         What is live, recorded and simulated
       </h2>
       <div className="scroll-x" tabIndex={0} role="region" aria-label="Scrollable table">
@@ -75,8 +118,9 @@ pnpm facts:check`}</pre>
             <tr>
               <td>The three people in the recorded call</td>
               <td>
-                Simulated: stand-in agents, labelled on the call page. A recorded run with people in Slack and
-                Telegram is the next step.
+                The bundled run on the call page is simulated: stand-in agents, labelled there. The live setup
+                above has real people in Slack and Telegram; its run bundle is added when the signed call
+                completes.
               </td>
             </tr>
             <tr>

@@ -651,3 +651,20 @@ body.render .nav,
 body.render .footer {
   display: none;
 }
+
+.live-shots {
+  margin-bottom: 24px;
+}
+.live-shot {
+  margin: 0;
+}
+.live-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.live-shot figcaption {
+  margin-top: 6px;
+}

@@ -16,8 +16,8 @@ This is not a made-up risk. In April 2026 the English High Court removed about U
 | For judges | `/judge`, a 60 second walk |
 | Demo video | to be linked at submission, under 3 minutes |
 | Track | Track 01, Best Business Workflow. Also entered for Track 03, Best Core Contribution |
-| Agents connected | Claude Code (shipowner), OpenCode (agency and charterer), and the Timekeeper, our own agent with no model |
-| Messaging apps | Slack (desk room) and Telegram (the ship's bridge room), linked. Status in the table below |
+| Agents connected | Three company agents on Claude Code (`ship-mate` for the shipowner, `agency-clerk` for the agency, `charter-desk` for the charterer), run on the Codespace by an enrolled agents controller, and the Timekeeper, our own agent with no model, as `timekeeper-a` with `timekeeper-b` on standby. The templates prefer OpenCode for the agency and charterer and fall back to Claude Code, which is what ran |
+| Messaging apps | Slack (`#desk`, workspace Saltmarsh Demo) and Telegram (group "Saltmarsh Grace bridge"), both connected to the server on 7 November 2026 |
 | Measured | 15 of 16 published worked examples reproduced, 10 of 10 runnable break cases held, a silent rewrite detected in a median 2.2 s, a crashed clock replaced in a median 21.9 s. All from [`docs/FACTS.json`](docs/FACTS.json) |
 
 <p align="center">
@@ -27,7 +27,16 @@ This is not a made-up risk. In April 2026 the English High Court removed about U
 <img src="docs/screens/judge-desktop-1440.png" alt="The judge path" width="49%">
 </p>
 
-The desk room in Slack, the bridge room in Telegram and the signed PDF will replace the two lower images after the recorded call with people. Until then everything shown is a recorded run on a real Switch server, and the people in it are labelled as simulated. The hero photograph was generated for this project.
+Live on 7 November 2026, on a switch-core 0.31.0 server in a GitHub Codespace driven from Switch Console:
+
+<p align="center">
+<img src="docs/screens/live/slack-desk.webp" alt="Slack desk room: the three company agents join and greet" width="49%">
+<img src="docs/screens/live/telegram-bridge.webp" alt="Telegram bridge room: ship-mate added for the master" width="36%">
+<img src="docs/screens/live/gateway-agents.webp" alt="Switch Gateway: three managed Claude Code agents running on the Codespace" width="49%">
+<img src="docs/screens/live/console-home.webp" alt="Switch Console: Slack and Telegram connected, accounts linked" width="49%">
+</p>
+
+The call page on the website still shows the bundled run from 6 November, whose people are stand-in agents and labelled as simulated; the run bundle of the live call is added when the third signature lands. The hero photograph was generated for this project.
 
 ## The problem
 
@@ -62,7 +71,7 @@ What each person physically does: the master photographs the deck log page and s
 
 ## How Switch is used
 
-**Agents and owners.** Four Switch users own the agents: `saltmarsh-owner` (`ship-mate`, Claude Code), `weserkai-agency` (`agency-clerk`, OpenCode), `kestrel-charterer` (`charter-desk`, OpenCode) and `hawser-service` (`timekeeper-a` and `timekeeper-b`, our own protocol client). Three companies, three owners, no shared keys.
+**Agents and owners.** Four Switch users own the agents: `saltmarsh-owner` (`ship-mate`, Claude Code), `weserkai-agency` (`agency-clerk`, OpenCode), `kestrel-charterer` (`charter-desk`, OpenCode) and `hawser-service` (`timekeeper-a` and `timekeeper-b`, our own protocol client). Three companies, three owners, no shared keys. That is the design. In the live setup of 7 November all agents are owned by the server's one admin account, because Console on this server created one user; separate owners per company (probe P13) remain untested.
 
 **Channels.** The desk room runs on Slack, the ship's bridge room on Telegram, joined by a labelled link. Templates, one per company, are in [`templates/`](templates) and are generated from the agent instructions in [`agents/`](agents) so they cannot drift.
 
@@ -195,11 +204,11 @@ Short version: authorship, ownership and addressing made a three-company room po
 
 | Part | Status |
 |---|---|
-| Switch server, agents, rooms, role lease, documents | Live: a real switch-core 0.31.0, run for the probes and the break campaign on 6 November 2026. Started from the cloned repository with a local Postgres, not on the Codespace |
-| The three people in the recorded call | **Simulated**: stand-in agents, labelled on the call page. A recorded run with people in Slack and Telegram replaces it |
+| Switch server, agents, rooms, role lease, documents | Live: switch-core 0.31.0 in a GitHub Codespace, set up by Switch Console as a remote host, since 7 November 2026. The probes and the break campaign ran on 6 November on a local switch-core 0.31.0 started from the cloned repository |
+| The three people | Live setup: Sean plays the master in Telegram, Eberebaby the port agent and Kingsley the charterer's manager in Slack, all on their own accounts. The bundled run on the call page is still **simulated** stand-in agents, labelled there |
 | Company agents' words in the break campaign | Scripted, not generated by a model |
-| Slack and Telegram bridges | Not yet connected. They need the owner's tokens, listed in `docs/HANDOFF.md` |
-| Claude Code and OpenCode company agents | Instructions and templates written, not yet run under Console |
+| Slack and Telegram bridges | Connected in Switch Console, accounts linked, bot invited to `#desk` and the Telegram group |
+| Company agents | Running: three managed Claude Code agents on the Codespace, created in Switch Gateway with the instructions in `agents/*.md`, invited with `/invite-agent` and `!invite-agent` |
 | Laytime counter | Live code, checked against published examples |
 | This website | Reads recorded run bundles and does not talk to a Switch server |
 
@@ -216,11 +225,15 @@ pnpm verify runs/call-saltmarsh-grace-brake-simulated-2026-11-06.json   # offlin
 pnpm facts:check    # facts match the evidence
 ```
 
-**Codespace path (primary).** The server, the agents and the Timekeeper run in a GitHub Codespace and are driven from Switch Console on a laptop. Follow [`docs/RUN_REMOTE_HOST.md`](docs/RUN_REMOTE_HOST.md), then:
+**Codespace path (primary).** The server, the agents and the Timekeeper run in a GitHub Codespace and are driven from Switch Console on a laptop. Follow [`docs/RUN_REMOTE_HOST.md`](docs/RUN_REMOTE_HOST.md), then on the Codespace:
 
 ```bash
-pnpm exec tsx scripts/register-timekeeper.ts --dry-run
+set -a; . ~/.switchdash/switch-server/.env; set +a      # admin login of the Console-made server
+pnpm exec tsx scripts/live-setup.ts list               # rooms and ids
+pnpm exec tsx scripts/live-setup.ts register           # timekeeper-a and -b, keys written to .env only
+pnpm exec tsx scripts/live-setup.ts wire <desk-room-id> <bridge-room-id>
 bash scripts/start-timekeeper.sh
+bash scripts/hawser-ensure.sh                          # after a Codespace restart: server, controller, Timekeepers
 ```
 
 **Console path (alternative, no Docker).** In Switch Console choose "Run a server on this computer". The Timekeeper scripts work the same.

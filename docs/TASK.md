@@ -17,7 +17,9 @@ Mark `[x]` only when done and verified. Updated at the end of session one, 6 Nov
 
 ## Phase 1. Switch server and accounts
 - [x] Codespace `literate-space-dollop-jj5479r4755xfpp4j` created (Docker, Node 22, Claude Code, OpenCode, tmux verified), repo synced
-- [ ] Console onboarding of the Codespace, four Switch users, Slack and Telegram, identity claims (needs the builder)
+- [x] Server on the Codespace through Console (remote host over an SSH port forward), Slack and Telegram connected, accounts linked
+- [x] Agents controller 0.31.0 enrolled on the Codespace; three managed Claude Code agents running; Timekeepers registered, wired and live
+- [ ] Four separate Switch users per company (all agents are owned by the admin in the live setup)
 - [x] A real switch-core 0.31.0 run locally for development and probes (not the Codespace)
 
 ## Phase 2. Probes
@@ -34,7 +36,8 @@ Mark `[x]` only when done and verified. Updated at the end of session one, 6 Nov
 
 ## Phase 5. Company agents and templates
 - [x] `agents/*.md`, three templates generated from them, addressing and link scripts
-- [ ] Run the templates under three accounts, adopt the Telegram bridge room, link rooms
+- [x] Agents created in Switch Gateway from `agents/*.md` (Console 0.40.1 could not check providers on a remote machine), invited to `#desk` and the Telegram bridge
+- [ ] Templates under three accounts (P13), `link_rooms`
 - [ ] A real recorded call with people
 
 ## Phase 6. Web app core and README v1

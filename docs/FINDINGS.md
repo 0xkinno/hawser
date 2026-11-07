@@ -61,3 +61,15 @@ Every result below comes from a script in `probes/` that writes a dated JSON fil
 The accurate form of the document finding is: room documents keep no revision history, and an update posts a one line notice that does not say what changed, so other members cannot see what a company rewrote. The Timekeeper anchors a fingerprint of every revision in the room's own record to cover that. The earlier plan said "no event is emitted". That was wrong, and the submission text uses the corrected form.
 
 The agent protocol page describes SSE plus a 2 second beat. The live transport is the WebSocket with a 10 second server ping. A client written from the page lands on the compatibility path.
+
+## Found while setting up the live server (7 November 2026, Switch Console 0.40.1, switch-core 0.31.0)
+
+Observed on the builder's Windows laptop with a GitHub Codespace as the remote host. Each item says what happened and what worked.
+
+- **Windows cannot host agents locally.** Console's provider check returns "SDK sessions require a POSIX SSH execution host" for every provider on win32 (`console/.../agent-types/availability.ts`). Agents have to run on a Linux or macOS host.
+- **Console's SSH ignores `ProxyCommand`.** The aliases `gh codespace ssh --config` writes time out in Console. A forwarded port with a plain `Host` block works.
+- **`SSH_AUTH_SOCK` on Windows.** With agent auth and no alias, Console looks only at `SSH_AUTH_SOCK`, which Windows OpenSSH does not set. Setting it to `\.\pipe\openssh-ssh-agent` works.
+- **Provider check by machine id.** For a managed machine the template form probes SSH at the machine's id as a host name (`getaddrinfo ENOTFOUND <id>`), so no provider can be picked. Switch Gateway's "New managed agent" uses what the controller reports and works.
+- **`machine` and `location` template params.** A `machine` param lists only agent-managed machines; a `location` param lists SSH hosts. Our templates switched to `location`.
+- **Adding agents to a room.** `POST /gateway/rooms/{id}/agents` takes `agent_ids` (a list). Our client sent `agent_id` and got HTTP 422.
+- **The headless agents controller** (`switch-agent-controller` 0.31.0, checksum from the release notes) enrols with a one-time code from Gateway, Machines, and runs agents on the Codespace. It stores its credential in a plain file when no OS keychain is present and says so in its log.

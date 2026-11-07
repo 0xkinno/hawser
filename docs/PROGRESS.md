@@ -36,3 +36,18 @@ Next: `docs/HANDOFF.md` section 3.
 | Presentation | 3 | The site and README are strong. The video does not exist yet and the real chat screenshots are missing |
 
 Blocking questions: Is Switch central, and would HAWSER stop without it? Yes. Does a judge see a real chat with real people in the video? Not yet. Can a stranger run `pnpm verify` with no keys? Yes. Is every Switch claim backed by a probe or file and line? Yes, or marked not run. Is the person and the moment clear in 10 seconds? Yes on the landing page. Does the master do something software cannot (photo, signature)? Designed, not yet recorded. Are misses published? Yes. Is the landing page clean at six viewports? Yes.
+
+## Session 2, live setup, 7 November 2026
+
+What ran, in order, with the obstacles that cost time:
+
+1. Switch Console 0.40.1 on Windows cannot host agent sessions (its source: "SDK sessions require a POSIX SSH execution host"). WSL on this laptop would not start (HCS_E_INVALID_JSON, then 0x8037010d, on Windows build 21996), so the Codespace became the host.
+2. Console's SSH client does not use `ProxyCommand`, so `gh codespace ssh --config` aliases fail. A `gh codespace ports forward 2222:2222` loop (`keep-forward.ps1`) and a plain `Host hawser-codespace` alias on 127.0.0.1:2222 work.
+3. Console reads the agent from `SSH_AUTH_SOCK`, which Windows does not set; pointing it at `\.\pipe\openssh-ssh-agent` fixed "SSH agent socket not found".
+4. The server was added through "Run a server on a remote host", then also as an existing server at `http://127.0.0.1:63295/gateway` through an SSH tunnel, because the managed entry hid the host from the template form.
+5. The Codespace container restarts on its own (idle timeout). `scripts/hawser-ensure.sh` restarts the server containers, the agents controller and the Timekeepers; the laptop tunnel runs it on every reconnect.
+6. Console's template form checks providers by SSH to the machine id, which fails. The agents were created in Switch Gateway, Machines, New managed agent, with the instructions from `agents/*.md`. Templates now use a `location` param; the `machine` param is offered only with agent management.
+7. `switch-client` sent `agent_id` to add agents to a room; switch-core 0.31 wants `agent_ids`. Fixed.
+8. Timekeepers registered with `scripts/live-setup.ts`, added to both rooms, addressing open to the desk room; A holds the role, B stands by.
+
+Cast of the live call: Sean (master, Telegram), Eberebaby (port agent, Slack), Kingsley (charterer's manager, Slack). Track 3: sandbox-quantum/switch#1672 open, CLA signed, three maintainer-gated checks waiting.
