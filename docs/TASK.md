@@ -13,7 +13,7 @@ Mark `[x]` only when done and verified. Updated at the end of session one, 6 Nov
 - [x] B.1 and B.2 devcontainer, B.3 `docs/RUN_REMOTE_HOST.md`, B.4 scripts
 - [x] D.2 shortlist and claim comments in `docs/TRACK3.md`
 - [x] D.3 fork `0xkinno/switch` cloned; claims posted on #796 and #792
-- [ ] D.4 pull requests (none yet; see `docs/TRACK3_LOG.md`)
+- [x] D.4 pull request #1672 open for #796 (99 new tests, mypy and ruff clean; not merged; see `docs/TRACK3_LOG.md`)
 
 ## Phase 1. Switch server and accounts
 - [x] Codespace `literate-space-dollop-jj5479r4755xfpp4j` created (Docker, Node 22, Claude Code, OpenCode, tmux verified), repo synced

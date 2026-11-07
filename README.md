@@ -246,7 +246,7 @@ AI coding assistants were used to write this repository, including Claude Code. 
 
 ## Track 3, Best Core Contribution
 
-Claim comments are posted on [#796 (SMS through Twilio)](https://github.com/sandbox-quantum/switch/issues/796) and [#792 (Signal)](https://github.com/sandbox-quantum/switch/issues/792) in `sandbox-quantum/switch`, from the fork `0xkinno/switch`. No pull request is open yet; the log is [`docs/TRACK3_LOG.md`](docs/TRACK3_LOG.md) and nothing is claimed as merged.
+Claim comments are posted on [#796 (SMS through Twilio)](https://github.com/sandbox-quantum/switch/issues/796) and [#792 (Signal)](https://github.com/sandbox-quantum/switch/issues/792) in `sandbox-quantum/switch`, from the fork `0xkinno/switch`. One pull request is open for #796, [sandbox-quantum/switch#1672](https://github.com/sandbox-quantum/switch/pull/1672), not merged and with no review yet. The log is [`docs/TRACK3_LOG.md`](docs/TRACK3_LOG.md) and nothing is claimed as merged.
 
 ## Repository map
 
