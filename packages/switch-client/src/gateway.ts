@@ -88,7 +88,7 @@ export class Gateway {
   }
 
   addAgentToRoom(roomId: string, agentId: string) {
-    return this.call<unknown>("POST", `/rooms/${roomId}/agents`, { agent_id: agentId });
+    return this.call<unknown>("POST", `/rooms/${roomId}/agents`, { agent_ids: [agentId] });
   }
 
   addUsersToRoom(roomId: string, userNames: string[]) {
