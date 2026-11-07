@@ -23,20 +23,15 @@ This is not a made-up risk. In April 2026 the English High Court removed about U
 <p align="center">
 <img src="docs/screens/call-desktop-1440.png" alt="The port call desk page" width="49%">
 <img src="docs/screens/findings-desktop-1440.png" alt="The findings page" width="49%">
-<img src="docs/screens/verify-desktop-1440.png" alt="The in-browser verifier" width="49%">
-<img src="docs/screens/judge-desktop-1440.png" alt="The judge path" width="49%">
-</p>
-
-Live on 7 November 2026, on a switch-core 0.31.0 server in a GitHub Codespace driven from Switch Console:
-
-<p align="center">
 <img src="docs/screens/live/slack-desk.webp" alt="Slack desk room: the three company agents join and greet" width="49%">
-<img src="docs/screens/live/telegram-bridge.webp" alt="Telegram bridge room: ship-mate added for the master" width="36%">
-<img src="docs/screens/live/gateway-agents.webp" alt="Switch Gateway: three managed Claude Code agents running on the Codespace" width="49%">
 <img src="docs/screens/live/console-home.webp" alt="Switch Console: Slack and Telegram connected, accounts linked" width="49%">
 </p>
 
-The call page on the website still shows the bundled run from 6 November, whose people are stand-in agents and labelled as simulated; the run bundle of the live call is added when the third signature lands. The hero photograph was generated for this project.
+<p align="center">
+<img src="docs/screens/live/telegram-bridge.webp" alt="Telegram bridge room: ship-mate added for the master" width="60%">
+</p>
+
+The website pages and, live on 7 November 2026, the Slack desk room, Switch Console and the Telegram bridge room on a switch-core 0.31.0 server in a GitHub Codespace driven from Switch Console. The call page on the website still shows the bundled run from 6 November, whose people are stand-in agents and labelled as simulated; the run bundle of the live call is added when the third signature lands. The hero photograph was generated for this project.
 
 ## The problem
 
